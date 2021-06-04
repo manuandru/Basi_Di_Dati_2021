@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2021-06-04T23:12:07.299Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36" etag="prItjMbkpzVevAoQkY1b" version="14.7.5" type="github">
+<mxfile host="app.diagrams.net" modified="2021-06-04T23:17:24.062Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36" etag="UuqaJRWYcJxrPtgvKydg" version="14.7.5" type="github">
   <diagram id="9G1gW6QuaoQ2ta026Gbt" name="Page-1">
-    <mxGraphModel dx="1054" dy="517" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="727" dy="357" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -858,6 +858,9 @@
         </mxCell>
         <mxCell id="ysFHZ9XbIgULPRsbKNE1-45" value="Ruolo" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;strokeWidth=2;shadow=0;sketch=0;labelBorderColor=none;" vertex="1" parent="1">
           <mxGeometry x="1403" y="737" width="42" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="ysFHZ9XbIgULPRsbKNE1-47" value="(0,1)" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;strokeWidth=2;shadow=0;sketch=0;labelBorderColor=none;" vertex="1" parent="1">
+          <mxGeometry x="1365" y="706" width="35" height="18" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
