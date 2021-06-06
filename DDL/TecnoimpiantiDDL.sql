@@ -54,3 +54,29 @@ CREATE TABLE LAVORI
     CONSTRAINT DATALAVORO_MINORE_DATAIMPIANTO CHECK (dbo.DataInizioImpiantoDaCodice(CodImpianto) <= Data),
     CONSTRAINT IMPIANTO_FINITO CHECK (dbo.DataFineImpiantoDaCodice(CodImpianto) >= Data)
 );
+
+
+CREATE TABLE RUOLI
+(
+	CodRuolo	INT				NOT NULL PRIMARY KEY, 
+    Descrizione VARCHAR(256)	NOT NULL
+)
+
+
+CREATE TABLE ELETTRICISTI
+(
+	CodiceFiscale   NCHAR(16)   NOT NULL PRIMARY KEY, 
+    Nome            VARCHAR(32) NULL, 
+    Cognome         VARCHAR(32) NULL
+)
+
+
+CREATE TABLE ELETTRICISTI_CON_RUOLI
+(
+	DataInizio DATE NOT NULL, 
+    DataFine DATE NULL, 
+    CodiceFiscale NCHAR(16) NOT NULL, 
+    CONSTRAINT PK_ELETTRICISTA_CON_RUOLO PRIMARY KEY (DataInizio, CodiceFiscale),
+    CONSTRAINT CHECK_DATE_CORRETTE CHECK (DataInizio <= DataFine),
+	CONSTRAINT CHECK_ELETTRICISTA_NO_RUOLO_DUPLICATO CHECK (dbo.ContaElettricistaDataFineNull(CodiceFiscale) <= 1)
+)
