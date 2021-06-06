@@ -35,10 +35,22 @@ CREATE TABLE IMPIANTI_ELETTRICI
 );
 
 
-CREATE TABLE TIPOLOGIA
+CREATE TABLE TIPOLOGIE
 (
     CodTipologia INT           NOT NULL,
     Nome         VARCHAR (32)  NOT NULL,
     Descrizione  VARCHAR (256) NOT NULL,
     NumeroLavori INT           NOT NULL,
+);
+
+
+CREATE TABLE LAVORI
+(
+    Data        DATE    NOT NULL, 
+    CodImpianto INT     NOT NULL, 
+    Costo       MONEY   NOT NULL,
+    CONSTRAINT PK_LAVORI PRIMARY KEY (Data, CodImpianto),
+    CONSTRAINT FK_LAVORO_IMPIANTO FOREIGN KEY (CodImpianto) REFERENCES IMPIANTI_ELETTRICI(CodImpianto),
+    CONSTRAINT DATALAVORO_MINORE_DATAIMPIANTO CHECK (dbo.DataInizioImpiantoDaCodice(CodImpianto) <= Data),
+    CONSTRAINT IMPIANTO_FINITO CHECK (dbo.DataFineImpiantoDaCodice(CodImpianto) >= Data)
 );

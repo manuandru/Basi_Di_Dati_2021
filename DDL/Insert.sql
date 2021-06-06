@@ -7,14 +7,24 @@ INSERT INTO CLIENTI VALUES
 
 
 INSERT INTO IMPIANTI_ELETTRICI VALUES
-(1, '06/06/2021', '07/06/2021', 'Emilia-Romagna', 'Riccione', 'via', 123, 'Bella vista', 1),
-(2, '03/06/2020', null, 'Emilia-Romagna', 'Riccione', 'via', 123, 'Bella vista', 2),
-(3, '06/06/2021', '07/06/2021', 'Emilia-Romagna', 'Rimini', 'via', 123, 'Bella vista', 3),
-(4, '06/06/2021', '07/06/2021', 'Emilia-Romagna', 'Riccione', 'via', 123, 'Bella vista', 1),
-(5, '06/06/2021', '07/06/2021', 'Emilia-Romagna', 'Riccione', 'via', 123, 'Bella vista', 2);
+(1, '06/05/2021', '06/10/2021', 'Emilia-Romagna', 'Riccione', 'via', 123, 'Bella vista', 1),
+(2, '06/10/2021', null, 'Emilia-Romagna', 'Riccione', 'via', 123, 'Bella vista', 2),
+(3, '06/15/2021', '06/17/2021', 'Emilia-Romagna', 'Rimini', 'via', 123, 'Bella vista', 3),
+(4, '06/20/2021', '06/30/2021', 'Emilia-Romagna', 'Riccione', 'via', 123, 'Bella vista', 1),
+(5, '06/23/2021', null, 'Emilia-Romagna', 'Riccione', 'via', 123, 'Bella vista', 2);
 
 
-INSERT INTO TIPOLOGIA VALUES
+INSERT INTO TIPOLOGIE VALUES
 (1, 'Stesa cavi', 'Stendiamo cavi per terra', 0),
 (2, 'Cambio Lampadine', 'Sostituzione lampadine', 0),
 (3, 'Aggiunta punto luce', 'Aggiungiamo un punto luce', 0);
+
+
+INSERT INTO LAVORI VALUES
+('06/05/2021', 1, 0),
+('06/07/2021', 1, 0),
+('06/08/2021', 1, 0),
+('06/10/2021', 1, 0),
+('06/11/2021', 2, 0),
+('06/15/2021', 3, 0),
+('06/20/2021', 4, 0);
