@@ -5,6 +5,7 @@ INSERT INTO CLIENTI VALUES
 (4, '+3331112223', 'fc22222678912345', 'Manuel2', 'Andruccioli', NULL, NULL),
 (5, '-3331112223', 'fc11111678912345', 'Manuel3', 'Andruccioli', NULL, NULL);
 
+
 INSERT INTO IMPIANTI_ELETTRICI VALUES
 (1, '06/06/2021', '07/06/2021', 'Emilia-Romagna', 'Riccione', 'via', 123, 'Bella vista', 1),
 (2, '03/06/2020', null, 'Emilia-Romagna', 'Riccione', 'via', 123, 'Bella vista', 2),
@@ -13,3 +14,7 @@ INSERT INTO IMPIANTI_ELETTRICI VALUES
 (5, '06/06/2021', '07/06/2021', 'Emilia-Romagna', 'Riccione', 'via', 123, 'Bella vista', 2);
 
 
+INSERT INTO TIPOLOGIA VALUES
+(1, 'Stesa cavi', 'Stendiamo cavi per terra', 0),
+(2, 'Cambio Lampadine', 'Sostituzione lampadine', 0),
+(3, 'Aggiunta punto luce', 'Aggiungiamo un punto luce', 0);

@@ -33,3 +33,12 @@ CREATE TABLE IMPIANTI_ELETTRICI
     CONSTRAINT DataInizioMaggioreDataFine CHECK (DataInizio < DataFine),
     CONSTRAINT FK_COD_CLIENTE FOREIGN KEY (CodCliente) REFERENCES CLIENTI(CodCliente)
 );
+
+
+CREATE TABLE TIPOLOGIA
+(
+    CodTipologia INT           NOT NULL,
+    Nome         VARCHAR (32)  NOT NULL,
+    Descrizione  VARCHAR (256) NOT NULL,
+    NumeroLavori INT           NOT NULL,
+);
