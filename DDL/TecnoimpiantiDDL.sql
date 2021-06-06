@@ -80,3 +80,20 @@ CREATE TABLE ELETTRICISTI_CON_RUOLI
     CONSTRAINT CHECK_DATE_CORRETTE CHECK (DataInizio <= DataFine),
 	CONSTRAINT CHECK_ELETTRICISTA_NO_RUOLO_DUPLICATO CHECK (dbo.ContaElettricistaDataFineNull(CodiceFiscale) <= 1)
 )
+
+
+CREATE TABLE TURNI_LAVORATIVI
+(
+	OraInizio					TIME		NOT NULL, 
+    OraFine						TIME		NOT NULL, 
+    CodiceFiscale				NCHAR(16)	NOT NULL,
+	DataInizioElettricista		DATE		NOT NULL,
+	DataLavoro					DATE		NOT NULL,
+    CodImpianto					INT			NOT NULL, 
+    CONSTRAINT PK_TURNI_LAVORATIVI PRIMARY KEY (OraInizio, CodiceFiscale, DataInizioElettricista, DataLavoro, CodImpianto),
+	CONSTRAINT CHECK_ORE_CORRETTE CHECK (OraInizio < OraFine),
+    CONSTRAINT LAVORATORE_NON_HA_RUOLO CHECK (dbo.ContaElettricistaDataFineNull(CodiceFiscale) = 1),
+	CONSTRAINT CHECK_ELETTRICISTA_LAVORA_DA_ASSUNTO CHECK (DataLavoro >= DataInizioElettricista),
+    CONSTRAINT FK_TURNI_LAVORATIVI_ELETTRICISTA_CF FOREIGN KEY (DataInizioElettricista, CodiceFiscale) REFERENCES ELETTRICISTI_CON_RUOLI(DataInizio, CodiceFiscale),
+	CONSTRAINT FK_TURNI_LAVORATIVI_LAVORO FOREIGN KEY (DataLavoro, CodImpianto) REFERENCES LAVORI(Data, CodImpianto),
+) 
