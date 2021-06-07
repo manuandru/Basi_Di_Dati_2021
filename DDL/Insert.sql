@@ -76,3 +76,19 @@ INSERT INTO MATERIALI VALUES
 (1, 'Lampadina', '10', 10, '220V', 150, 1),
 (2, 'Scatola', '20', 20, '25x35', 50, 2),
 (3, 'Interruttore', '0', 5, '12V', 250, 1);
+
+
+INSERT INTO MATERIALI_IN_PREVENTIVI VALUES
+(1, 2, 10, null),
+(2, 1, 10, null),
+(3, 1, 10, null),
+(3, 3, 100, null),
+(2, 2, 2, null);
+
+
+INSERT INTO DETTAGLI_MATERIALI VALUES
+(1, 1, '06/05/2021', 10, 15, 0.05, null),
+(2, 1, '06/05/2021', 20, 14, 0.05, null),
+(3, 1, '06/05/2021', 15, 14.75, 0.01, null),
+(3, 3, '06/15/2021', 100, 5, 0, null),
+(2, 2, '06/11/2021', 22, 30, 0, null);
