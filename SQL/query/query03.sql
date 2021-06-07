@@ -1,8 +1,8 @@
-/* Recupero il codice del Cliente (si può omettere se già si conosce) */
+/* Recupero il codice del Cliente (si puo' omettere se gia' si conosce) */
 SELECT CodCliente
 FROM CLIENTI
 WHERE <condizioni>;
 
 INSERT INTO IMPIANTI_ELETTRICI VALUES
 (<CodImpianto>, <DataInizio>, <DataFine>, 
-<Regione>, <Città>, <Via>, <Numero>, <Note>, <CodCliente>);
+<Regione>, <Citta>, <Via>, <Numero>, <Note>, <CodCliente>);

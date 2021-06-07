@@ -1,7 +1,7 @@
-SELECT CodMateriale, Quantità
+SELECT CodMateriale, Quantita
 FROM MATERIALI
 WHERE <condizioni>;
 
 UPDATE MATERIALI
-SET Quantità = <NuovaQuantità> 
+SET Quantita = <NuovaQuantita> 
 WHERE CodMateriale = <CodMateriale>;

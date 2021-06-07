@@ -8,25 +8,25 @@ WHERE <condizioni>
 
 /* Aumento l'attributo ridondante */
 UPDATE TIPOLOGIE
-SET NumeroLavori = <NuovaQuantità> + 1
+SET NumeroLavori = <NuovaQuantita> + 1
 WHERE CodTipologia = <CodTipologia>;
 
 INSERT INTO LAVORI VALUES
 (<DataLavoro>, <CodImpianto>, <Costo>, <CodTipologia>),
 
 /* Cerco i materiali necessari */
-SELECT CodMateriale, QuantitàVenduta
+SELECT CodMateriale, QuantitaVenduta
 FROM MATERIALI
 WHERE <condizioni>
 
 /* Aggiorno l'attributo ridondante */
 UPDATE MATERIALI
-SET QuantitàVenduta = <QuantitàVenduta> + <QuantitàUtilizzata>
+SET QuantitaVenduta = <QuantitaVenduta> + <QuantitaUtilizzata>
 WHERE CodMateriale = <CodMateriale>
 
 INSERT INTO DETTAGLI_MATERIALI VALUES
 (<CodMateriale>, <CodImpianto>, <DataLavoro>, 
-<QuantitàUtilizzata>, <Prezzo>, <Sconto>, <Nota>);
+<QuantitaUtilizzata>, <Prezzo>, <Sconto>, <Nota>);
 
 
 
