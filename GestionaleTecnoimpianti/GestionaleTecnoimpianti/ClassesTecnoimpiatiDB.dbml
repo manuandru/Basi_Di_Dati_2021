@@ -1,0 +1,160 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="TecnoimpiantiDB" Class="ClassesTecnoimpiatiDBDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\TecnoimpiantiDB.mdf;Integrated Security=True" SettingsObjectName="GestionaleTecnoimpianti.Properties.Settings" SettingsPropertyName="TecnoimpiantiDBConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.CLIENTI" Member="CLIENTI">
+    <Type Name="CLIENTI">
+      <Column Name="CodCliente" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Telefono" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="CodiceFiscale" Type="System.String" DbType="NChar(16)" CanBeNull="true" />
+      <Column Name="Nome" Type="System.String" DbType="VarChar(32)" CanBeNull="true" />
+      <Column Name="Cognome" Type="System.String" DbType="VarChar(32)" CanBeNull="true" />
+      <Column Name="PartitaIVA" Type="System.String" DbType="NChar(11)" CanBeNull="true" />
+      <Column Name="Denominazione" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="CLIENTI_IMPIANTI_ELETTRICI" Member="IMPIANTI_ELETTRICI" ThisKey="CodCliente" OtherKey="CodCliente" Type="IMPIANTI_ELETTRICI" />
+      <Association Name="CLIENTI_PREVENTIVI" Member="PREVENTIVI" ThisKey="CodCliente" OtherKey="CodCliente" Type="PREVENTIVI" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TURNI_LAVORATIVI" Member="TURNI_LAVORATIVI">
+    <Type Name="TURNI_LAVORATIVI">
+      <Column Name="OraInizio" Type="System.TimeSpan" DbType="Time NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="OraFine" Type="System.TimeSpan" DbType="Time NOT NULL" CanBeNull="false" />
+      <Column Name="Nota" Type="System.String" DbType="VarChar(256)" CanBeNull="true" />
+      <Column Name="CodiceFiscale" Type="System.String" DbType="NChar(16) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="DataInizioElettricista" Type="System.DateTime" DbType="Date NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="DataLavoro" Type="System.DateTime" DbType="Date NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CodImpianto" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Targa" Type="System.String" DbType="NChar(7) NOT NULL" CanBeNull="false" />
+      <Association Name="ELETTRICISTI_CON_RUOLI_TURNI_LAVORATIVI" Member="ELETTRICISTI_CON_RUOLI" ThisKey="DataInizioElettricista,CodiceFiscale" OtherKey="DataInizio,CodiceFiscale" Type="ELETTRICISTI_CON_RUOLI" IsForeignKey="true" />
+      <Association Name="FURGONI_TURNI_LAVORATIVI" Member="FURGONI" ThisKey="Targa" OtherKey="Targa" Type="FURGONI" IsForeignKey="true" />
+      <Association Name="LAVORI_TURNI_LAVORATIVI" Member="LAVORI" ThisKey="DataLavoro,CodImpianto" OtherKey="Data,CodImpianto" Type="LAVORI" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DETTAGLI_MATERIALI" Member="DETTAGLI_MATERIALI">
+    <Type Name="DETTAGLI_MATERIALI">
+      <Column Name="CodMateriale" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CodImpianto" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="DataLavoro" Type="System.DateTime" DbType="Date NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Quantità" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Prezzo" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="Sconto" Type="System.Single" DbType="Real" CanBeNull="true" />
+      <Column Name="Nota" Type="System.String" DbType="VarChar(256)" CanBeNull="true" />
+      <Association Name="LAVORI_DETTAGLI_MATERIALI" Member="LAVORI" ThisKey="DataLavoro,CodImpianto" OtherKey="Data,CodImpianto" Type="LAVORI" IsForeignKey="true" />
+      <Association Name="MATERIALI_DETTAGLI_MATERIALI" Member="MATERIALI" ThisKey="CodMateriale" OtherKey="CodMateriale" Type="MATERIALI" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ELETTRICISTI" Member="ELETTRICISTI">
+    <Type Name="ELETTRICISTI">
+      <Column Name="CodiceFiscale" Type="System.String" DbType="NChar(16) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Nome" Type="System.String" DbType="VarChar(32)" CanBeNull="true" />
+      <Column Name="Cognome" Type="System.String" DbType="VarChar(32)" CanBeNull="true" />
+      <Association Name="ELETTRICISTI_ELETTRICISTI_CON_RUOLI" Member="ELETTRICISTI_CON_RUOLI" ThisKey="CodiceFiscale" OtherKey="CodiceFiscale" Type="ELETTRICISTI_CON_RUOLI" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ELETTRICISTI_CON_RUOLI" Member="ELETTRICISTI_CON_RUOLI">
+    <Type Name="ELETTRICISTI_CON_RUOLI">
+      <Column Name="DataInizio" Type="System.DateTime" DbType="Date NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="DataFine" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="CodiceFiscale" Type="System.String" DbType="NChar(16) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CodRuolo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="ELETTRICISTI_CON_RUOLI_TURNI_LAVORATIVI" Member="TURNI_LAVORATIVI" ThisKey="DataInizio,CodiceFiscale" OtherKey="DataInizioElettricista,CodiceFiscale" Type="TURNI_LAVORATIVI" />
+      <Association Name="ELETTRICISTI_CON_RUOLI_PREVENTIVI" Member="PREVENTIVI" ThisKey="DataInizio,CodiceFiscale" OtherKey="DataInizioElettricista,CodiceFiscale" Type="PREVENTIVI" />
+      <Association Name="ELETTRICISTI_ELETTRICISTI_CON_RUOLI" Member="ELETTRICISTI" ThisKey="CodiceFiscale" OtherKey="CodiceFiscale" Type="ELETTRICISTI" IsForeignKey="true" />
+      <Association Name="RUOLI_ELETTRICISTI_CON_RUOLI" Member="RUOLI" ThisKey="CodRuolo" OtherKey="CodRuolo" Type="RUOLI" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.FORNITORI" Member="FORNITORI">
+    <Type Name="FORNITORI">
+      <Column Name="CodFornitore" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Nome" Type="System.String" DbType="VarChar(32) NOT NULL" CanBeNull="false" />
+      <Column Name="Telefono" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Association Name="FORNITORI_MATERIALI" Member="MATERIALI" ThisKey="CodFornitore" OtherKey="CodFornitore" Type="MATERIALI" />
+    </Type>
+  </Table>
+  <Table Name="dbo.FURGONI" Member="FURGONI">
+    <Type Name="FURGONI">
+      <Column Name="Targa" Type="System.String" DbType="NChar(7) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Marca" Type="System.String" DbType="VarChar(32) NOT NULL" CanBeNull="false" />
+      <Column Name="Posti" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="KM" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="FURGONI_TURNI_LAVORATIVI" Member="TURNI_LAVORATIVI" ThisKey="Targa" OtherKey="Targa" Type="TURNI_LAVORATIVI" />
+    </Type>
+  </Table>
+  <Table Name="dbo.IMPIANTI_ELETTRICI" Member="IMPIANTI_ELETTRICI">
+    <Type Name="IMPIANTI_ELETTRICI">
+      <Column Name="CodImpianto" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="DataInizio" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="DataFine" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Regione" Type="System.String" DbType="VarChar(32) NOT NULL" CanBeNull="false" />
+      <Column Name="Città" Type="System.String" DbType="VarChar(32) NOT NULL" CanBeNull="false" />
+      <Column Name="Via" Type="System.String" DbType="VarChar(32) NOT NULL" CanBeNull="false" />
+      <Column Name="Numero" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Note" Type="System.String" DbType="VarChar(256)" CanBeNull="true" />
+      <Column Name="CodCliente" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="IMPIANTI_ELETTRICI_LAVORI" Member="LAVORI" ThisKey="CodImpianto" OtherKey="CodImpianto" Type="LAVORI" />
+      <Association Name="CLIENTI_IMPIANTI_ELETTRICI" Member="CLIENTI" ThisKey="CodCliente" OtherKey="CodCliente" Type="CLIENTI" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LAVORI" Member="LAVORI">
+    <Type Name="LAVORI">
+      <Column Name="Data" Type="System.DateTime" DbType="Date NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CodImpianto" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Costo" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="CodTipologia" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="LAVORI_TURNI_LAVORATIVI" Member="TURNI_LAVORATIVI" ThisKey="Data,CodImpianto" OtherKey="DataLavoro,CodImpianto" Type="TURNI_LAVORATIVI" />
+      <Association Name="LAVORI_DETTAGLI_MATERIALI" Member="DETTAGLI_MATERIALI" ThisKey="Data,CodImpianto" OtherKey="DataLavoro,CodImpianto" Type="DETTAGLI_MATERIALI" />
+      <Association Name="IMPIANTI_ELETTRICI_LAVORI" Member="IMPIANTI_ELETTRICI" ThisKey="CodImpianto" OtherKey="CodImpianto" Type="IMPIANTI_ELETTRICI" IsForeignKey="true" />
+      <Association Name="TIPOLOGIE_LAVORI" Member="TIPOLOGIE" ThisKey="CodTipologia" OtherKey="CodTipologia" Type="TIPOLOGIE" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MATERIALI" Member="MATERIALI">
+    <Type Name="MATERIALI">
+      <Column Name="CodMateriale" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Nome" Type="System.String" DbType="VarChar(32) NOT NULL" CanBeNull="false" />
+      <Column Name="Quantità" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Prezzo" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="Descrizione" Type="System.String" DbType="VarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="QuantitàVenduta" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CodFornitore" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="MATERIALI_DETTAGLI_MATERIALI" Member="DETTAGLI_MATERIALI" ThisKey="CodMateriale" OtherKey="CodMateriale" Type="DETTAGLI_MATERIALI" />
+      <Association Name="MATERIALI_MATERIALI_IN_PREVENTIVI" Member="MATERIALI_IN_PREVENTIVI" ThisKey="CodMateriale" OtherKey="CodMateriale" Type="MATERIALI_IN_PREVENTIVI" />
+      <Association Name="FORNITORI_MATERIALI" Member="FORNITORI" ThisKey="CodFornitore" OtherKey="CodFornitore" Type="FORNITORI" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MATERIALI_IN_PREVENTIVI" Member="MATERIALI_IN_PREVENTIVI">
+    <Type Name="MATERIALI_IN_PREVENTIVI">
+      <Column Name="CodMateriale" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CodPreventivo" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Quantità" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Nota" Type="System.String" DbType="VarChar(256)" CanBeNull="true" />
+      <Association Name="MATERIALI_MATERIALI_IN_PREVENTIVI" Member="MATERIALI" ThisKey="CodMateriale" OtherKey="CodMateriale" Type="MATERIALI" IsForeignKey="true" />
+      <Association Name="PREVENTIVI_MATERIALI_IN_PREVENTIVI" Member="PREVENTIVI" ThisKey="CodPreventivo" OtherKey="CodPreventivo" Type="PREVENTIVI" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PREVENTIVI" Member="PREVENTIVI">
+    <Type Name="PREVENTIVI">
+      <Column Name="CodPreventivo" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Data" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="CodCliente" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CodiceFiscale" Type="System.String" DbType="NChar(16) NOT NULL" CanBeNull="false" />
+      <Column Name="DataInizioElettricista" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Association Name="PREVENTIVI_MATERIALI_IN_PREVENTIVI" Member="MATERIALI_IN_PREVENTIVI" ThisKey="CodPreventivo" OtherKey="CodPreventivo" Type="MATERIALI_IN_PREVENTIVI" />
+      <Association Name="CLIENTI_PREVENTIVI" Member="CLIENTI" ThisKey="CodCliente" OtherKey="CodCliente" Type="CLIENTI" IsForeignKey="true" />
+      <Association Name="ELETTRICISTI_CON_RUOLI_PREVENTIVI" Member="ELETTRICISTI_CON_RUOLI" ThisKey="DataInizioElettricista,CodiceFiscale" OtherKey="DataInizio,CodiceFiscale" Type="ELETTRICISTI_CON_RUOLI" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RUOLI" Member="RUOLI">
+    <Type Name="RUOLI">
+      <Column Name="CodRuolo" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Descrizione" Type="System.String" DbType="VarChar(256) NOT NULL" CanBeNull="false" />
+      <Association Name="RUOLI_ELETTRICISTI_CON_RUOLI" Member="ELETTRICISTI_CON_RUOLI" ThisKey="CodRuolo" OtherKey="CodRuolo" Type="ELETTRICISTI_CON_RUOLI" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TIPOLOGIE" Member="TIPOLOGIE">
+    <Type Name="TIPOLOGIE">
+      <Column Name="CodTipologia" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Nome" Type="System.String" DbType="VarChar(32) NOT NULL" CanBeNull="false" />
+      <Column Name="Descrizione" Type="System.String" DbType="VarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="NumeroLavori" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="TIPOLOGIE_LAVORI" Member="LAVORI" ThisKey="CodTipologia" OtherKey="CodTipologia" Type="LAVORI" />
+    </Type>
+  </Table>
+</Database>
