@@ -4,29 +4,63 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GestionaleTecnoimpianti"
-        Title="Tecnoimpianti" Height="550" Width="800">
+        Title="Tecnoimpianti" Height="565" Width="815">
     <Grid>
         <TabControl HorizontalAlignment="Left" Height="525" VerticalAlignment="Top" Width="800" >
-            <TabItem Header="Clienti">
-                <Grid Background="#FFE5E5E5" />
+            <TabItem Header="Clienti" >
+                <Grid Background="#FFE5E5E5" >
+                    <Button Content="Nuovo Privato" HorizontalAlignment="Left" Margin="10,15,0,0" VerticalAlignment="Top" Width="340" Height="60" FontWeight="Bold" FontSize="20" />
+                    <Button Content="Nuova Azienda" HorizontalAlignment="Left" Margin="444,15,0,0" VerticalAlignment="Top" Width="340" Height="60" FontWeight="Bold" FontSize="20" />
+                    <Separator HorizontalAlignment="Left" Height="1" Margin="0,90,0,0" VerticalAlignment="Top" Width="800"/>
+                    <DataGrid HorizontalAlignment="Left" Height="382" Margin="397,105,0,0" VerticalAlignment="Top" Width="387"/>
+                    <Button Content="Elenco&#xA;Clienti" HorizontalAlignment="Left" Margin="10,105,0,0" VerticalAlignment="Top" Width="115" Height="60" FontWeight="Bold" FontSize="16" />
+                    <Button Content="Elenco&#xA;Privati" HorizontalAlignment="Left" Margin="130,105,0,0" VerticalAlignment="Top" Width="115" Height="60" FontWeight="Bold" FontSize="16" />
+                    <Button Content="Elenco&#xA;Aziende" HorizontalAlignment="Left" Margin="250,105,0,0" VerticalAlignment="Top" Width="115" Height="60" FontWeight="Bold" FontSize="16" />
+                    <Separator HorizontalAlignment="Left" Height="1" Margin="0,90,0,0" VerticalAlignment="Top" Width="800"/>
+                    <GroupBox Header="Nome" HorizontalAlignment="Left" Height="53" Margin="10,219,0,0" VerticalAlignment="Top" Width="355" BorderBrush="Black">
+                        <TextBox HorizontalAlignment="Left" Height="29" TextWrapping="Wrap" VerticalAlignment="Top" Width="329" Margin="4,0,0,0"/>
+                    </GroupBox>
+                    <GroupBox Header="Cognome" HorizontalAlignment="Left" Height="53" Margin="10,277,0,0" VerticalAlignment="Top" Width="355" BorderBrush="Black">
+                        <TextBox HorizontalAlignment="Left" Height="29" TextWrapping="Wrap" VerticalAlignment="Top" Width="329" Margin="4,0,0,0"/>
+                    </GroupBox>
+                    <GroupBox Header="Telefono" HorizontalAlignment="Left" Height="53" Margin="10,335,0,0" VerticalAlignment="Top" Width="355" BorderBrush="Black">
+                        <TextBox HorizontalAlignment="Left" Height="29" TextWrapping="Wrap" VerticalAlignment="Top" Width="329" Margin="4,0,0,0"/>
+                    </GroupBox>
+                    <GroupBox Header="Denominazione" HorizontalAlignment="Left" Height="53" Margin="10,393,0,0" VerticalAlignment="Top" Width="355" BorderBrush="Black">
+                        <TextBox HorizontalAlignment="Left" Height="29" TextWrapping="Wrap" VerticalAlignment="Top" Width="329" Margin="4,0,0,0"/>
+                    </GroupBox>
+                    <Button Content="Ricerca" HorizontalAlignment="Left" Margin="250,451,0,0" VerticalAlignment="Top" Width="115" Height="36" FontWeight="Bold" FontSize="16" />
+                </Grid>
             </TabItem>
             <TabItem Header="Elettricisti">
-                <Grid Background="#FFE5E5E5"/>
+                <Grid Background="#FFE5E5E5">
+                    <Button Content="Nuovo Elettricista" HorizontalAlignment="Left" Margin="10,15,0,0" VerticalAlignment="Top" Width="774" Height="60" FontWeight="Bold" FontSize="20" />
+                </Grid>
             </TabItem>
             <TabItem x:Name="TabFurgoni" Header="Furgoni">
-                <Grid Background="#FFE5E5E5"/>
+                <Grid Background="#FFE5E5E5">
+                    <Button Content="Nuovo Furgone" HorizontalAlignment="Left" Margin="10,15,0,0" VerticalAlignment="Top" Width="774" Height="60" FontWeight="Bold" FontSize="20" />
+                </Grid>
             </TabItem>
             <TabItem Header="Materiali">
-                <Grid Background="#FFE5E5E5"/>
+                <Grid Background="#FFE5E5E5">
+                    <Button Content="Nuovo Materiale" HorizontalAlignment="Left" Margin="10,15,0,0" VerticalAlignment="Top" Width="774" Height="60" FontWeight="Bold" FontSize="20" />
+                </Grid>
             </TabItem>
             <TabItem Header="Preventivi"  Margin="330,0,-340,0">
-                <Grid Background="#FFE5E5E5"/>
+                <Grid Background="#FFE5E5E5">
+                    <Button Content="Nuovo Preventivo" HorizontalAlignment="Left" Margin="10,15,0,0" VerticalAlignment="Top" Width="774" Height="60" FontWeight="Bold" FontSize="20" />
+                </Grid>
             </TabItem>
             <TabItem Header="Impianti Elettrici" Margin="340,0,-350,0">
-                <Grid Background="#FFE5E5E5"/>
+                <Grid Background="#FFE5E5E5">
+                    <Button Content="Nuovo Impianto Elettrico" HorizontalAlignment="Left" Margin="10,15,0,0" VerticalAlignment="Top" Width="774" Height="60" FontWeight="Bold" FontSize="20" />
+                </Grid>
             </TabItem>
             <TabItem Header="Lavori" Margin="348,0,-368,0">
-                <Grid Background="#FFE5E5E5"/>
+                <Grid Background="#FFE5E5E5">
+                    <Button Content="Inserisci Lavoro" HorizontalAlignment="Left" Margin="10,15,0,0" VerticalAlignment="Top" Width="774" Height="60" FontWeight="Bold" FontSize="20" />
+                </Grid>
             </TabItem>
         </TabControl>
 
