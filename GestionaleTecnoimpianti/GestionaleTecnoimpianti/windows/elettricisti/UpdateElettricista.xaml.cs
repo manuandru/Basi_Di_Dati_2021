@@ -19,8 +19,8 @@ namespace GestionaleTecnoimpianti.windows.elettricisti
     /// </summary>
     public partial class UpdateElettricista : Window
     {
-        private ClassesTecnoimpiatiDBDataContext db = new ClassesTecnoimpiatiDBDataContext();
-        private ELETTRICISTI_CON_RUOLI ElettricistaToUpdate;
+        private readonly ClassesTecnoimpiatiDBDataContext db = new ClassesTecnoimpiatiDBDataContext();
+        private readonly ELETTRICISTI_CON_RUOLI ElettricistaToUpdate;
 
         public UpdateElettricista(string CF)
         {

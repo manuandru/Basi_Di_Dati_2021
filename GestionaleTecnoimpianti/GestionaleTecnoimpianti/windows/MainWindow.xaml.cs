@@ -1,6 +1,7 @@
 ﻿using GestionaleTecnoimpianti.windows;
 using GestionaleTecnoimpianti.windows.clienti;
 using GestionaleTecnoimpianti.windows.elettricisti;
+using GestionaleTecnoimpianti.windows.furgoni;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -285,6 +286,45 @@ namespace GestionaleTecnoimpianti
             Ruolo_Elettricista.SelectedItem = null;
 
             Ruolo_Elettricista.ItemsSource = data;
+        }
+
+        private void Inserisci_Furgone_Click(object sender, RoutedEventArgs e)
+        {
+            new FormFurgoni().ShowDialog();
+        }
+
+        private void Elenco_Furgone_Click(object sender, RoutedEventArgs e)
+        {
+            var furgoni = from f in DB.FURGONI
+                          select new { f.Targa, f.Marca, f.Posti, f.KM };
+
+            FurgoniDataGrid.ItemsSource = furgoni;
+        }
+
+        /// <summary>
+        /// Launch the update FORM for (Furgoni)
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Furgoni_DataGrid_Double_Click(object sender, MouseButtonEventArgs e)
+        {
+            if (FurgoniDataGrid.SelectedItem != null)
+            {
+                // need to dereferencing the object 
+                // otherwise we need to cast to (int,string,string...) exactly parameters
+                dynamic selectedFurgone = FurgoniDataGrid.SelectedItem;
+                string selectedTarga = selectedFurgone.Targa;
+
+                var data = from f in DB.FURGONI
+                           where f.Targa == selectedTarga
+                           select new { f.Targa };
+
+                if (data.Any() && data.First().Targa != null)
+                {
+                    new UpdateFurgoni(selectedTarga).ShowDialog();
+                }
+
+            }
         }
 
 

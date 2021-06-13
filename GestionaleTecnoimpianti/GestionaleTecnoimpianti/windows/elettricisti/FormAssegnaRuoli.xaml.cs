@@ -19,7 +19,7 @@ namespace GestionaleTecnoimpianti.windows.elettricisti
     /// </summary>
     public partial class FormAssegnaRuoli : Window
     {
-        private ClassesTecnoimpiatiDBDataContext DB = new ClassesTecnoimpiatiDBDataContext();
+        private readonly ClassesTecnoimpiatiDBDataContext DB = new ClassesTecnoimpiatiDBDataContext();
 
         public FormAssegnaRuoli()
         {

@@ -60,7 +60,10 @@
             </TabItem>
             <TabItem x:Name="TabFurgoni" Header="Furgoni">
                 <Grid Background="#FFE5E5E5">
-                    <Button Content="Nuovo Furgone" HorizontalAlignment="Left" Margin="10,15,0,0" VerticalAlignment="Top" Width="774" Height="60" FontWeight="Bold" FontSize="20" />
+                    <Button Content="Nuovo Furgone" HorizontalAlignment="Left" Margin="10,15,0,0" VerticalAlignment="Top" Width="774" Height="60" FontWeight="Bold" FontSize="20" Click="Inserisci_Furgone_Click" />
+                    <Separator HorizontalAlignment="Left" Height="1" Margin="0,90,-5.778,0" VerticalAlignment="Top" Width="800"/>
+                    <DataGrid x:Name="FurgoniDataGrid" HorizontalAlignment="Left" Height="382" Margin="334,105,0,0" VerticalAlignment="Top" Width="450" MouseDoubleClick="Furgoni_DataGrid_Double_Click" />
+                    <Button Content="Mostra Furgoni" HorizontalAlignment="Left" Margin="10,105,0,0" VerticalAlignment="Top" Width="319" Height="60" FontWeight="Bold" FontSize="20" Click="Elenco_Furgone_Click" />
                 </Grid>
             </TabItem>
             <TabItem Header="Materiali">
