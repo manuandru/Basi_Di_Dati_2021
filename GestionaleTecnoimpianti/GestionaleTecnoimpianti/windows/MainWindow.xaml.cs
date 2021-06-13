@@ -1,5 +1,6 @@
 ﻿using GestionaleTecnoimpianti.windows;
 using GestionaleTecnoimpianti.windows.clienti;
+using GestionaleTecnoimpianti.windows.elettricisti;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -156,6 +157,106 @@ namespace GestionaleTecnoimpianti
                 }
                 
             }
+        }
+
+        private void Nuovo_Elettricista_Click(object sender, RoutedEventArgs e)
+        {
+            new FormElettricisti().ShowDialog();
+        }
+
+        private void Assegna_Ruolo_Click(object sender, RoutedEventArgs e)
+        {
+            new FormAssegnaRuoli().ShowDialog();
+        }
+
+        private void Elenco_Elettricisti_Click(object sender, RoutedEventArgs e)
+        {
+            var data = from el in DB.ELETTRICISTI_CON_RUOLI
+                       select new
+                       {
+                           el.CodiceFiscale,
+                           el.ELETTRICISTI.Nome,
+                           el.ELETTRICISTI.Cognome,
+                           el.DataInizio,
+                           el.DataFine,
+                           el.RUOLI.Descrizione
+                       };
+
+            ElettricistiDataGrid.ItemsSource = data;
+        }
+
+        private void Elenco_Elettricisti_Con_Ruolo_Click(object sender, RoutedEventArgs e)
+        {
+            var data = from el in DB.ELETTRICISTI_CON_RUOLI
+                       where el.DataFine == null
+                       select new
+                       {
+                           el.CodiceFiscale,
+                           el.ELETTRICISTI.Nome,
+                           el.ELETTRICISTI.Cognome,
+                           el.DataInizio,
+                           el.RUOLI.Descrizione
+                       };
+
+            ElettricistiDataGrid.ItemsSource = data;
+        }
+
+        private void Elenco_Elettricisti_Senza_Ruolo_Click(object sender, RoutedEventArgs e)
+        {
+            var data = from el in DB.ELETTRICISTI_CON_RUOLI
+                       where el.DataFine != null
+                       select new
+                       {
+                           el.CodiceFiscale,
+                           el.ELETTRICISTI.Nome,
+                           el.ELETTRICISTI.Cognome,
+                           el.DataInizio,
+                           el.DataFine,
+                           el.RUOLI.Descrizione
+                       };
+
+            ElettricistiDataGrid.ItemsSource = data;
+        }
+
+        private void Ricerca_Elettricista_Click(object sender, RoutedEventArgs e)
+        {
+            var data = from el in DB.ELETTRICISTI_CON_RUOLI
+                       select new
+                       {
+                           el.CodiceFiscale,
+                           el.ELETTRICISTI.Nome,
+                           el.ELETTRICISTI.Cognome,
+                           el.DataInizio,
+                           el.DataFine,
+                           el.RUOLI.Descrizione
+                       };
+
+            if (Nome_Elettricista.Text != "")
+            {
+                data = data.Where(elem => elem.Nome == Nome_Elettricista.Text);
+            }
+
+            if (Cognome_Elettricista.Text != "")
+            {
+                data = data.Where(elem => elem.Cognome == Cognome_Elettricista.Text);
+            }
+
+            if (Codice_Fiscale_Elettricista.Text != "")
+            {
+                data = data.Where(elem => elem.CodiceFiscale == Codice_Fiscale_Elettricista.Text);
+            }
+
+            if (Ruolo_Elettricista.Text != "")
+            {
+                data = data.Where(elem => elem.Descrizione == Ruolo_Elettricista.Text);
+            }
+
+            ElettricistiDataGrid.ItemsSource = data;
+        }
+
+        private void Elettricisti_DataGrid_Double_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

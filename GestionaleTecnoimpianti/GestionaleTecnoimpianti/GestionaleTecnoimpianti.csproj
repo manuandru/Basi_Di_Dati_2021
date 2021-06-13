@@ -87,6 +87,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="windows\elettricisti\FormAssegnaRuoli.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="windows\elettricisti\FormElettricisti.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="windows\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -112,6 +120,12 @@
     </Compile>
     <Compile Include="windows\clienti\UpdatePrivati.xaml.cs">
       <DependentUpon>UpdatePrivati.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="windows\elettricisti\FormAssegnaRuoli.xaml.cs">
+      <DependentUpon>FormAssegnaRuoli.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="windows\elettricisti\FormElettricisti.xaml.cs">
+      <DependentUpon>FormElettricisti.xaml</DependentUpon>
     </Compile>
     <Compile Include="windows\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>

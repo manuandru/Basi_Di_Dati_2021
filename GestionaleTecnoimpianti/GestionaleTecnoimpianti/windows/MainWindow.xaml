@@ -34,7 +34,26 @@
             </TabItem>
             <TabItem Header="Elettricisti">
                 <Grid Background="#FFE5E5E5">
-                    <Button Content="Nuovo Elettricista" HorizontalAlignment="Left" Margin="10,15,0,0" VerticalAlignment="Top" Width="774" Height="60" FontWeight="Bold" FontSize="20" />
+                    <Button Content="Nuovo Elettricista" HorizontalAlignment="Left" Margin="10,15,0,0" VerticalAlignment="Top" Width="340" Height="60" FontWeight="Bold" FontSize="20" Click="Nuovo_Elettricista_Click" />
+                    <Button Content="Assegna Ruolo" HorizontalAlignment="Left" Margin="444,15,0,0" VerticalAlignment="Top" Width="340" Height="60" FontWeight="Bold" FontSize="20" Click="Assegna_Ruolo_Click" />
+                    <Separator HorizontalAlignment="Left" Height="1" Margin="0,90,0,0" VerticalAlignment="Top" Width="800"/>
+                    <Button Content="Elenco&#xD;&#xA;Elettricisti" HorizontalAlignment="Left" Margin="10,105,0,0" VerticalAlignment="Top" Width="100" Height="60" FontWeight="Bold" FontSize="16" Click="Elenco_Elettricisti_Click" />
+                    <Button Content="Elettricisti&#xD;&#xA;con Ruolo" HorizontalAlignment="Left" Margin="115,105,0,0" VerticalAlignment="Top" Width="100" Height="60" FontWeight="Bold" FontSize="16" Click="Elenco_Elettricisti_Con_Ruolo_Click" />
+                    <Button Content="Elettricisti&#xD;&#xA;senza Ruolo" HorizontalAlignment="Left" Margin="220,105,0,0" VerticalAlignment="Top" Width="100" Height="60" FontWeight="Bold" FontSize="16" Click="Elenco_Elettricisti_Senza_Ruolo_Click" />
+                    <DataGrid x:Name="ElettricistiDataGrid" HorizontalAlignment="Left" Height="382" Margin="334,105,0,0" VerticalAlignment="Top" Width="450" MouseDoubleClick="Elettricisti_DataGrid_Double_Click" />
+                    <GroupBox Header="Nome" HorizontalAlignment="Left" Height="53" Margin="10,219,0,0" VerticalAlignment="Top" Width="310" BorderBrush="Black">
+                        <TextBox x:Name="Nome_Elettricista" HorizontalAlignment="Left" Height="29" TextWrapping="Wrap" VerticalAlignment="Top" Width="296" Margin="4,0,-1.778,0"/>
+                    </GroupBox>
+                    <GroupBox Header="Cognome" HorizontalAlignment="Left" Height="53" Margin="10,277,0,0" VerticalAlignment="Top" Width="310" BorderBrush="Black">
+                        <TextBox x:Name="Cognome_Elettricista" HorizontalAlignment="Left" Height="29" TextWrapping="Wrap" VerticalAlignment="Top" Width="296" Margin="4,0,-1.778,0"/>
+                    </GroupBox>
+                    <GroupBox Header="Codice Fiscale" HorizontalAlignment="Left" Height="53" Margin="10,335,0,0" VerticalAlignment="Top" Width="310" BorderBrush="Black">
+                        <TextBox x:Name="Codice_Fiscale_Elettricista" HorizontalAlignment="Left" Height="29" TextWrapping="Wrap" VerticalAlignment="Top" Width="296" Margin="4,0,-1.778,0"/>
+                    </GroupBox>
+                    <GroupBox Header="Ruolo" HorizontalAlignment="Left" Height="53" Margin="10,393,0,0" VerticalAlignment="Top" Width="310" BorderBrush="Black">
+                        <TextBox x:Name="Ruolo_Elettricista" HorizontalAlignment="Left" Height="29" TextWrapping="Wrap" VerticalAlignment="Top" Width="296" Margin="4,0,-1.778,0"/>
+                    </GroupBox>
+                    <Button Content="Ricerca" HorizontalAlignment="Left" Margin="205,451,0,0" VerticalAlignment="Top" Width="115" Height="36" FontWeight="Bold" FontSize="16" Click="Ricerca_Elettricista_Click" />
                 </Grid>
             </TabItem>
             <TabItem x:Name="TabFurgoni" Header="Furgoni">
