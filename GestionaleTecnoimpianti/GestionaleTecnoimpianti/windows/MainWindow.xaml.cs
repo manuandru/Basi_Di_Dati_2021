@@ -1,4 +1,5 @@
 ﻿using GestionaleTecnoimpianti.windows;
+using GestionaleTecnoimpianti.windows.clienti;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,9 +22,11 @@ namespace GestionaleTecnoimpianti
     /// </summary>
     public partial class MainWindow : Window
     {
+        private ClassesTecnoimpiatiDBDataContext DB { get; }
         public MainWindow()
         {
             InitializeComponent();
+            DB = GetDB();
         }
 
         private ClassesTecnoimpiatiDBDataContext GetDB()
@@ -31,7 +34,7 @@ namespace GestionaleTecnoimpianti
 
         private void Elenco_Clienti_Click(object sender, RoutedEventArgs e)
         {
-            var data = from c in GetDB().CLIENTI
+            var data = from c in DB.CLIENTI
                        select new
                        {
                            c.CodCliente,
@@ -48,7 +51,7 @@ namespace GestionaleTecnoimpianti
 
         private void Elenco_Privati_Click(object sender, RoutedEventArgs e)
         {
-            var data = from c in GetDB().CLIENTI
+            var data = from c in DB.CLIENTI
                        where c.CodiceFiscale != null
                        select new
                        {
@@ -64,7 +67,7 @@ namespace GestionaleTecnoimpianti
 
         private void Elenco_Aziende_Click(object sender, RoutedEventArgs e)
         {
-            var data = from c in GetDB().CLIENTI
+            var data = from c in DB.CLIENTI
                        where c.PartitaIVA != null
                        select new
                        {
@@ -79,7 +82,7 @@ namespace GestionaleTecnoimpianti
 
         private void Ricerca_Cliente_Click(object sender, RoutedEventArgs e)
         {
-            var data = from c in GetDB().CLIENTI
+            var data = from c in DB.CLIENTI
                        select new
                        {
                            c.CodCliente,
@@ -122,6 +125,37 @@ namespace GestionaleTecnoimpianti
         private void Inserisci_Azienda_Click(object sender, RoutedEventArgs e)
         {
             new FormAziende().ShowDialog();
+        }
+
+        /// <summary>
+        /// Launch FORM to update the selected (CLIENTE)
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Clienti_DataGrid_Double_Click(object sender, MouseButtonEventArgs e)
+        {
+            if (ClientiDataGrid.SelectedItem != null)
+            {
+                // need to dereferencing the object 
+                // otherwise we need to cast to (int,string,string...) exactly parameters
+                dynamic selectedCliente = ClientiDataGrid.SelectedItem;
+                int selectedCod = selectedCliente.CodCliente;
+
+                var data = from c in DB.CLIENTI
+                           where c.CodCliente == selectedCod
+                           select new { c.CodCliente, c.CodiceFiscale };
+
+                
+                if (data.First().CodiceFiscale != null)
+                {
+                    new UpdatePrivati(selectedCod).ShowDialog();
+                }
+                else
+                {
+                    new UpdateAziende(selectedCod).ShowDialog();
+                }
+                
+            }
         }
     }
 }

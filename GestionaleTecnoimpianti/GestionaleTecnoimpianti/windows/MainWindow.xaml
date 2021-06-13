@@ -12,7 +12,7 @@
                     <Button Content="Nuovo Privato" HorizontalAlignment="Left" Margin="10,15,0,0" VerticalAlignment="Top" Width="340" Height="60" FontWeight="Bold" FontSize="20" Click="Inserisci_Privato_Click" />
                     <Button Content="Nuova Azienda" HorizontalAlignment="Left" Margin="444,15,0,0" VerticalAlignment="Top" Width="340" Height="60" FontWeight="Bold" FontSize="20" Click="Inserisci_Azienda_Click" />
                     <Separator HorizontalAlignment="Left" Height="1" Margin="0,90,0,0" VerticalAlignment="Top" Width="800"/>
-                    <DataGrid x:Name="ClientiDataGrid" HorizontalAlignment="Left" Height="382" Margin="334,105,0,0" VerticalAlignment="Top" Width="450"/>
+                    <DataGrid x:Name="ClientiDataGrid" HorizontalAlignment="Left" Height="382" Margin="334,105,0,0" VerticalAlignment="Top" Width="450" MouseDoubleClick="Clienti_DataGrid_Double_Click"/>
                     <Button Content="Elenco&#xA;Clienti" HorizontalAlignment="Left" Margin="10,105,0,0" VerticalAlignment="Top" Width="100" Height="60" FontWeight="Bold" FontSize="16" Click="Elenco_Clienti_Click" />
                     <Button Content="Elenco&#xA;Privati" HorizontalAlignment="Left" Margin="115,105,0,0" VerticalAlignment="Top" Width="100" Height="60" FontWeight="Bold" FontSize="16" Click="Elenco_Privati_Click" />
                     <Button Content="Elenco&#xA;Aziende" HorizontalAlignment="Left" Margin="220,105,0,0" VerticalAlignment="Top" Width="100" Height="60" FontWeight="Bold" FontSize="16" Click="Elenco_Aziende_Click" />

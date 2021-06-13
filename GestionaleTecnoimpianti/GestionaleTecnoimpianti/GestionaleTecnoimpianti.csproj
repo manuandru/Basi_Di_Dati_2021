@@ -71,11 +71,19 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="windows\FormAziende.xaml">
+    <Page Include="windows\clienti\FormAziende.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="windows\FormPrivati.xaml">
+    <Page Include="windows\clienti\FormPrivati.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="windows\clienti\UpdateAziende.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="windows\clienti\UpdatePrivati.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -93,11 +101,17 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ClassesTecnoimpiatiDB.dbml</DependentUpon>
     </Compile>
-    <Compile Include="windows\FormAziende.xaml.cs">
+    <Compile Include="windows\clienti\FormAziende.xaml.cs">
       <DependentUpon>FormAziende.xaml</DependentUpon>
     </Compile>
-    <Compile Include="windows\FormPrivati.xaml.cs">
+    <Compile Include="windows\clienti\FormPrivati.xaml.cs">
       <DependentUpon>FormPrivati.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="windows\clienti\UpdateAziende.xaml.cs">
+      <DependentUpon>UpdateAziende.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="windows\clienti\UpdatePrivati.xaml.cs">
+      <DependentUpon>UpdatePrivati.xaml</DependentUpon>
     </Compile>
     <Compile Include="windows\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
