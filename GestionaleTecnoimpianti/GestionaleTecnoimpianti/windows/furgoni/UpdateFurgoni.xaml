@@ -8,7 +8,7 @@
         WindowStyle="ToolWindow">
     <Grid>
         <Label Content="Targa" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="100"/>
-        <Label x:Name="Targa" HorizontalAlignment="Left" Height="26" Margin="150,10,0,0" VerticalAlignment="Top" Width="125"/>
+        <Label x:Name="TargaFurgone" HorizontalAlignment="Left" Height="26" Margin="150,10,0,0" VerticalAlignment="Top" Width="125"/>
         <Label Content="Chilometri da Aggiungere" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top" Width="148"/>
         <TextBox x:Name="KM" HorizontalAlignment="Left" Height="26" Margin="10,72,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="265"/>
         <Button Content="Annulla" HorizontalAlignment="Left" Margin="10,130,0,0" VerticalAlignment="Top" Width="125" Background="#FFFF7676" Click="Annulla_Click" />

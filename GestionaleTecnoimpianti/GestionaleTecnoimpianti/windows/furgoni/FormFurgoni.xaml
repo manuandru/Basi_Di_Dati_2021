@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GestionaleTecnoimpianti.windows.furgoni"
-        Title="Inserimento Azienda" Height="200" Width="295"
+        Title="Inserimento Nuovo Furgone" Height="200" Width="295"
         WindowStyle="ToolWindow">
     <Grid>
         <Label Content="Targa" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="100"/>

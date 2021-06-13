@@ -1,0 +1,23 @@
+﻿<Window x:Class="GestionaleTecnoimpianti.windows.materiali.FormMateriali"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GestionaleTecnoimpianti.windows.materiali"
+        Title="Inserimento Nuovo Materiale" Height="250" Width="295"
+        WindowStyle="ToolWindow">
+    <Grid>
+        <Label Content="Nome" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="100"/>
+        <TextBox x:Name="Nome" HorizontalAlignment="Left" Height="26" Margin="150,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="125"/>
+        <Label Content="Descrizione" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top" Width="100"/>
+        <TextBox x:Name="Descrizione" HorizontalAlignment="Left" Height="26" Margin="150,41,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="125"/>
+        <Label Content="Quantità" HorizontalAlignment="Left" Margin="10,72,0,0" VerticalAlignment="Top" Width="100"/>
+        <TextBox x:Name="Quantita" HorizontalAlignment="Left" Height="26" Margin="150,72,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="125"/>
+        <Button Content="Annulla" HorizontalAlignment="Left" Margin="10,183,0,0" VerticalAlignment="Top" Width="125" Background="#FFFF7676" Click="Annulla_Click" />
+        <Button Content="Inserisci" HorizontalAlignment="Left" Margin="150,183,0,0" VerticalAlignment="Top" Width="125" Background="#FF9BFF79" Click="Inserisci_Click" />
+        <Label Content="Prezzo" HorizontalAlignment="Left" Margin="10,103,0,0" VerticalAlignment="Top" Width="100"/>
+        <TextBox x:Name="Prezzo" HorizontalAlignment="Left" Height="26" Margin="150,103,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="125"/>
+        <Label Content="Fornitore" HorizontalAlignment="Left" Margin="10,134,0,0" VerticalAlignment="Top" Width="100"/>
+        <ComboBox x:Name="Fornitore" HorizontalAlignment="Left" Height="26" Margin="150,134,0,0" VerticalAlignment="Top" Width="125"/>
+    </Grid>
+</Window>

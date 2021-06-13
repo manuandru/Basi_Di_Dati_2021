@@ -63,25 +63,39 @@
                     <Button Content="Nuovo Furgone" HorizontalAlignment="Left" Margin="10,15,0,0" VerticalAlignment="Top" Width="774" Height="60" FontWeight="Bold" FontSize="20" Click="Inserisci_Furgone_Click" />
                     <Separator HorizontalAlignment="Left" Height="1" Margin="0,90,-5.778,0" VerticalAlignment="Top" Width="800"/>
                     <DataGrid x:Name="FurgoniDataGrid" HorizontalAlignment="Left" Height="382" Margin="334,105,0,0" VerticalAlignment="Top" Width="450" MouseDoubleClick="Furgoni_DataGrid_Double_Click" />
-                    <Button Content="Mostra Furgoni" HorizontalAlignment="Left" Margin="10,105,0,0" VerticalAlignment="Top" Width="319" Height="60" FontWeight="Bold" FontSize="20" Click="Elenco_Furgone_Click" />
+                    <Button Content="Mostra Furgoni" HorizontalAlignment="Left" Margin="10,105,0,0" VerticalAlignment="Top" Width="305" Height="60" FontWeight="Bold" FontSize="20" Click="Elenco_Furgone_Click" />
                 </Grid>
             </TabItem>
             <TabItem Header="Materiali">
                 <Grid Background="#FFE5E5E5">
-                    <Button Content="Nuovo Materiale" HorizontalAlignment="Left" Margin="10,15,0,0" VerticalAlignment="Top" Width="774" Height="60" FontWeight="Bold" FontSize="20" />
+                    <Button Content="Nuovo Materiale" HorizontalAlignment="Left" Margin="10,15,0,0" VerticalAlignment="Top" Width="774" Height="60" FontWeight="Bold" FontSize="20" Click="Nuovo_Materiale_Click"/>
+                    <DataGrid x:Name="MaterialiDataGrid" HorizontalAlignment="Left" Height="377" Margin="334,110,0,0" VerticalAlignment="Top" Width="450" MouseDoubleClick="Materiali_DataGrid_Double_Click" />
+                    <Button Content="Elenco Materiali" HorizontalAlignment="Left" Margin="10,110,0,0" VerticalAlignment="Top" Width="305" Height="60" FontWeight="Bold" FontSize="20" Click="Elenco_Materiali_Click" />
+                    <Button Content="Mostra Materiale più usato" HorizontalAlignment="Left" Margin="10,427,0,0" VerticalAlignment="Top" Width="305" Height="60" FontWeight="Bold" FontSize="20" Click="Materiale_Costosto_Click" />
+                    <Separator HorizontalAlignment="Left" Height="1" Margin="0,90,-5.778,0" VerticalAlignment="Top" Width="800"/>
                 </Grid>
             </TabItem>
-            <TabItem Header="Preventivi"  Margin="330,0,-340,0">
+            <TabItem Header="Fornitori">
+                <Grid Background="#FFE5E5E5">
+                    <Button Content="Nuovo Fornitore" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="774" Height="60" FontWeight="Bold" FontSize="20" Click="Nuovo_Fornitore_Click"/>
+                    <DataGrid x:Name="FornitoriDataGrid" HorizontalAlignment="Left" Height="377" Margin="334,110,0,0" VerticalAlignment="Top" Width="450"/>
+                    <Button Content="Elenco Fornitori" HorizontalAlignment="Left" Margin="10,110,0,0" VerticalAlignment="Top" Width="305" Height="60" FontWeight="Bold" FontSize="20" Click="Elenco_Fornitori_Click" />
+                    <Separator HorizontalAlignment="Left" Height="1" Margin="0,90,-5.778,0" VerticalAlignment="Top" Width="800"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Preventivi"  Margin="263,0,-273,0">
                 <Grid Background="#FFE5E5E5">
                     <Button Content="Nuovo Preventivo" HorizontalAlignment="Left" Margin="10,15,0,0" VerticalAlignment="Top" Width="774" Height="60" FontWeight="Bold" FontSize="20" />
+                    <Separator HorizontalAlignment="Left" Height="1" Margin="0,90,-5.778,0" VerticalAlignment="Top" Width="800"/>
+                    <DataGrid x:Name="FornitoriDataGrid_Copy" HorizontalAlignment="Left" Height="377" Margin="334,110,0,0" VerticalAlignment="Top" Width="450"/>
                 </Grid>
             </TabItem>
-            <TabItem Header="Impianti Elettrici" Margin="340,0,-350,0">
+            <TabItem Header="Impianti Elettrici" Margin="272.444,0,-282.667,0">
                 <Grid Background="#FFE5E5E5">
                     <Button Content="Nuovo Impianto Elettrico" HorizontalAlignment="Left" Margin="10,15,0,0" VerticalAlignment="Top" Width="774" Height="60" FontWeight="Bold" FontSize="20" />
                 </Grid>
             </TabItem>
-            <TabItem Header="Lavori" Margin="348,0,-368,0">
+            <TabItem Header="Lavori" Margin="282.222,0,-302.667,0">
                 <Grid Background="#FFE5E5E5">
                     <Button Content="Inserisci Lavoro" HorizontalAlignment="Left" Margin="10,15,0,0" VerticalAlignment="Top" Width="774" Height="60" FontWeight="Bold" FontSize="20" />
                 </Grid>

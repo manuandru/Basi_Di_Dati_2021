@@ -71,6 +71,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="windows\fornitori\FormFornitori.xaml.cs">
+      <DependentUpon>FormFornitori.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="windows\materiali\FormMateriali.xaml.cs">
+      <DependentUpon>FormMateriali.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="windows\materiali\UpdateMateriali.xaml.cs">
+      <DependentUpon>UpdateMateriali.xaml</DependentUpon>
+    </Compile>
     <Page Include="windows\clienti\FormAziende.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -96,6 +105,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="windows\elettricisti\UpdateElettricista.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="windows\fornitori\FormFornitori.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -152,6 +165,14 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="windows\materiali\FormMateriali.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="windows\materiali\UpdateMateriali.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -211,5 +232,6 @@
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,7 +1,9 @@
 ﻿using GestionaleTecnoimpianti.windows;
 using GestionaleTecnoimpianti.windows.clienti;
 using GestionaleTecnoimpianti.windows.elettricisti;
+using GestionaleTecnoimpianti.windows.fornitori;
 using GestionaleTecnoimpianti.windows.furgoni;
+using GestionaleTecnoimpianti.windows.materiali;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -327,6 +329,65 @@ namespace GestionaleTecnoimpianti
             }
         }
 
+        private void Nuovo_Materiale_Click(object sender, RoutedEventArgs e)
+        {
+            new FormMateriali().ShowDialog();
+        }
 
+        private void Elenco_Materiali_Click(object sender, RoutedEventArgs e)
+        {
+            var materiali = from m in DB.MATERIALI
+                            select new { m.CodMateriale, m.Nome, m.Descrizione, m.Quantità, m.Prezzo, m.QuantitàVenduta, Nome_Fornitore = m.FORNITORI.Nome };
+
+            MaterialiDataGrid.ItemsSource = materiali;
+        }
+
+        private void Materiale_Costosto_Click(object sender, RoutedEventArgs e)
+        {
+            var materiali = from m in DB.MATERIALI
+                            select new { m.CodMateriale, m.Nome, m.Descrizione, m.Quantità, m.Prezzo, m.QuantitàVenduta, Nome_Fornitore = m.FORNITORI.Nome };
+
+            int maxQuantita = materiali.Max(m => m.QuantitàVenduta);
+            MaterialiDataGrid.ItemsSource = materiali.Where(m => m.QuantitàVenduta == maxQuantita);
+        }
+
+        /// <summary>
+        /// Launch the update FORM for (Materiali)
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Materiali_DataGrid_Double_Click(object sender, MouseButtonEventArgs e)
+        {
+            if (MaterialiDataGrid.SelectedItem != null)
+            {
+                // need to dereferencing the object 
+                // otherwise we need to cast to (int,string,string...) exactly parameters
+                dynamic selectedMateriale = MaterialiDataGrid.SelectedItem;
+                int selectedCod = selectedMateriale.CodMateriale;
+
+                var data = from m in DB.MATERIALI
+                           where m.CodMateriale == selectedCod
+                           select new { m.CodMateriale };
+
+                if (data.Any())
+                {
+                    new UpdateMateriali(selectedCod).ShowDialog();
+                }
+
+            }
+        }
+
+        private void Nuovo_Fornitore_Click(object sender, RoutedEventArgs e)
+        {
+            new FormFornitori().ShowDialog();
+        }
+
+        private void Elenco_Fornitori_Click(object sender, RoutedEventArgs e)
+        {
+            var forntori = from f in DB.FORNITORI
+                           select new { f.CodFornitore, f.Nome, f.Telefono };
+
+            FornitoriDataGrid.ItemsSource = forntori;
+        }
     }
 }

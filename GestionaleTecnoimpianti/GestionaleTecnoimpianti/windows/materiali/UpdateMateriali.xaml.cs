@@ -12,37 +12,39 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace GestionaleTecnoimpianti.windows.furgoni
+namespace GestionaleTecnoimpianti.windows.materiali
 {
     /// <summary>
-    /// Logica di interazione per UpdateFurgoni.xaml
+    /// Logica di interazione per UpdateMateriali.xaml
     /// </summary>
-    public partial class UpdateFurgoni : Window
+    public partial class UpdateMateriali : Window
     {
         private readonly ClassesTecnoimpiatiDBDataContext db = new ClassesTecnoimpiatiDBDataContext();
-        private readonly FURGONI FurgoneToUpdate;
-        public UpdateFurgoni(string Targa)
+        private readonly MATERIALI MaterialeToUpdate;
+
+        public UpdateMateriali(int CodMateriale)
         {
             InitializeComponent();
 
-            var Furgoni = from f in db.FURGONI
-                          where f.Targa == Targa
-                          select f;
+            var Materiali = from m in db.MATERIALI
+                            where m.CodMateriale == CodMateriale
+                            select m;
 
-            FurgoneToUpdate = Furgoni.First();
-            TargaFurgone.Content = FurgoneToUpdate.Targa;
+            MaterialeToUpdate = Materiali.First();
+            Nome.Content = MaterialeToUpdate.Nome;
+            Quantita.Text = MaterialeToUpdate.Quantità.ToString();
         }
 
         private void Annulla_Click(object sender, RoutedEventArgs e) => Close();
 
-        private void Aggiungi_KM_Click(object sender, RoutedEventArgs e)
+        private void Aggiorna_Click(object sender, RoutedEventArgs e)
         {
-            FurgoneToUpdate.KM += int.Parse(KM.Text);
+            MaterialeToUpdate.Quantità = int.Parse(Quantita.Text);
 
             try
             {
                 db.SubmitChanges();
-                MessageBox.Show("KM aggiunti correttamente");
+                MessageBox.Show("Quantità aggiornata correttamente");
                 Close();
             }
             catch (Exception ex)
