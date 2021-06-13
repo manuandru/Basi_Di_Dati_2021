@@ -4,18 +4,18 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GestionaleTecnoimpianti.windows.elettricisti"
-        Title="Assegna Nuovo Ruolo" Height="220" Width="295"
+        Title="Assegna Nuovo Ruolo" Height="250" Width="295"
         WindowStyle="ToolWindow">
     <Grid>
-        <Label Content="Nome" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="90"/>
-        <TextBox x:Name="Nome" HorizontalAlignment="Left" Height="26" Margin="150,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="125"/>
-        <Label Content="Cognome" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top" Width="90"/>
-        <TextBox x:Name="Cognome" HorizontalAlignment="Left" Height="26" Margin="150,41,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="125"/>
-        <Label Content="Codice Fiscale" HorizontalAlignment="Left" Margin="10,72,0,0" VerticalAlignment="Top" Width="90"/>
-        <TextBox x:Name="CF" HorizontalAlignment="Left" Height="26" Margin="150,72,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="125"/>
-        <Label Content="Telefono" HorizontalAlignment="Left" Margin="10,103,0,0" VerticalAlignment="Top" Width="90"/>
-        <TextBox x:Name="Telefono" HorizontalAlignment="Left" Height="26" Margin="150,103,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="125"/>
-        <Button Content="Annulla" HorizontalAlignment="Left" Margin="10,155,0,0" VerticalAlignment="Top" Width="125" Background="#FFFF7676" Click="Annulla_Click" />
-        <Button Content="Inserisci" HorizontalAlignment="Left" Margin="150,155,0,0" VerticalAlignment="Top" Width="125" Background="#FF9BFF79" Click="Inserisci_Click" />
+        <Label Content="Codice Fiscale" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="90"/>
+        <ComboBox x:Name="CF" HorizontalAlignment="Left" Height="26" Margin="150,10,0,0" VerticalAlignment="Top" Width="125"/>
+        <Label Content="Ruolo da Assegnare" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top" Width="125"/>
+        <ComboBox x:Name="Ruolo" HorizontalAlignment="Left" Height="26" Margin="150,41,0,0" VerticalAlignment="Top" Width="125"/>
+        <DatePicker x:Name="Date" HorizontalAlignment="Left" Margin="10,78,0,0" VerticalAlignment="Top" Height="25" Width="265"/>
+        <Button Content="Annulla" HorizontalAlignment="Left" Margin="10,115,0,0" VerticalAlignment="Top" Width="125" Background="#FFFF7676" Click="Annulla_Click" />
+        <Button Content="Assegna" HorizontalAlignment="Left" Margin="150,115,0,0" VerticalAlignment="Top" Width="125" Background="#FF9BFF79" Click="Assegna_Click" />
+        <Separator HorizontalAlignment="Left" Height="10" Margin="0,146,-0.333,0" VerticalAlignment="Top" Width="291"/>
+        <Button Content="Aggiungi Ruolo" HorizontalAlignment="Left" Margin="150,176,0,0" VerticalAlignment="Top" Width="125" Click="Aggiungi_Ruolo"/>
+        <TextBox x:Name="Descrizione" HorizontalAlignment="Left" Height="20" Margin="10,176,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="125"/>
     </Grid>
 </Window>

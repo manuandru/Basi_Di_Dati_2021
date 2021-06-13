@@ -171,15 +171,12 @@ namespace GestionaleTecnoimpianti
 
         private void Elenco_Elettricisti_Click(object sender, RoutedEventArgs e)
         {
-            var data = from el in DB.ELETTRICISTI_CON_RUOLI
+            var data = from el in DB.ELETTRICISTI
                        select new
                        {
                            el.CodiceFiscale,
-                           el.ELETTRICISTI.Nome,
-                           el.ELETTRICISTI.Cognome,
-                           el.DataInizio,
-                           el.DataFine,
-                           el.RUOLI.Descrizione
+                           el.Nome,
+                           el.Cognome
                        };
 
             ElettricistiDataGrid.ItemsSource = data;
@@ -254,9 +251,42 @@ namespace GestionaleTecnoimpianti
             ElettricistiDataGrid.ItemsSource = data;
         }
 
+        /// <summary>
+        /// Launch the update FORM for (Elettricisti)
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Elettricisti_DataGrid_Double_Click(object sender, RoutedEventArgs e)
         {
+            if (ElettricistiDataGrid.SelectedItem != null)
+            {
+                // need to dereferencing the object 
+                // otherwise we need to cast to (int,string,string...) exactly parameters
+                dynamic selectedElettricista = ElettricistiDataGrid.SelectedItem;
+                string selectedCF = selectedElettricista.CodiceFiscale;
 
+                var data = from c in DB.ELETTRICISTI_CON_RUOLI
+                           where c.CodiceFiscale == selectedCF && c.DataFine == null
+                           select new { c.CodiceFiscale, c.DataFine };
+
+                if (data.Any() && data.First().CodiceFiscale != null)
+                {
+                    new UpdateElettricista(selectedCF).ShowDialog();
+                }
+
+            }
         }
+
+        private void Ruolo_Elettricista_Click(object sender, MouseButtonEventArgs e)
+        {
+            var data = from r in DB.RUOLI
+                       select r.Descrizione;
+
+            Ruolo_Elettricista.SelectedItem = null;
+
+            Ruolo_Elettricista.ItemsSource = data;
+        }
+
+
     }
 }

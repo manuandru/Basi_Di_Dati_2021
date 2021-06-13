@@ -24,14 +24,37 @@ namespace GestionaleTecnoimpianti.windows.elettricisti
             InitializeComponent();
         }
 
-        private void Annulla_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
+        private void Annulla_Click(object sender, RoutedEventArgs e) => Close();
 
         private void Inserisci_Click(object sender, RoutedEventArgs e)
         {
+            if (CF.Text != "" && Nome.Text != "" && Cognome.Text != "")
+            {
+                var db = new ClassesTecnoimpiatiDBDataContext();
+                if (db.ELETTRICISTI.Any(el => el.CodiceFiscale == CF.Text))
+                {
+                    MessageBox.Show("Codice Fiscale già presente");
+                }
+                else
+                {
+                    ELETTRICISTI newElettricista = new ELETTRICISTI()
+                    {
+                        CodiceFiscale = CF.Text,
+                        Nome = Nome.Text,
+                        Cognome = Cognome.Text
+                    };
 
+                    db.ELETTRICISTI.InsertOnSubmit(newElettricista);
+
+                    db.SubmitChanges();
+                    MessageBox.Show("Nuovo Elettricista inserito correttamente");
+                    Close();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Non tutti i valori sono stati inseriti");
+            }
         }
     }
 }
