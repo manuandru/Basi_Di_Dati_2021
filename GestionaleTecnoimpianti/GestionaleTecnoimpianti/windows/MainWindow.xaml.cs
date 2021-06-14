@@ -4,6 +4,7 @@ using GestionaleTecnoimpianti.windows.elettricisti;
 using GestionaleTecnoimpianti.windows.fornitori;
 using GestionaleTecnoimpianti.windows.furgoni;
 using GestionaleTecnoimpianti.windows.materiali;
+using GestionaleTecnoimpianti.windows.preventivi;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -389,5 +390,63 @@ namespace GestionaleTecnoimpianti
 
             FornitoriDataGrid.ItemsSource = forntori;
         }
+
+        private void Nuovo_Preventivo_Click(object sender, RoutedEventArgs e)
+        {
+            new FormPreventivi().ShowDialog();
+        }
+
+        private void Elenco_Preventivi_Click(object sender, RoutedEventArgs e)
+        {
+            var preventivi = from p in DB.PREVENTIVI
+                             select new { p.CodPreventivo, p.CodCliente, p.Data };
+
+            PreventivoDataGrid.ItemsSource = preventivi;
+        }
+
+        private void Ricerca_Preventivo_Click(object sender, RoutedEventArgs e)
+        {
+            var preventivi = from p in DB.PREVENTIVI
+                             select new { p.CodPreventivo, p.CodCliente, p.Data };
+
+            if (Codice_Cliente_Preventivo.Text != "")
+            {
+                preventivi = preventivi.Where(elem => elem.CodCliente == int.Parse(Codice_Cliente_Preventivo.Text));
+            }
+
+            if (Data_Preventivo.SelectedDate != null)
+            {
+                preventivi = preventivi.Where(elem => elem.Data == Data_Preventivo.SelectedDate);
+            }
+
+            PreventivoDataGrid.ItemsSource = preventivi;
+        }
+
+        /// <summary>
+        /// Launch the information FORM for (Preventivi)
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Preventivi_DataGrid_Double_Click(object sender, MouseButtonEventArgs e)
+        {
+            if (PreventivoDataGrid.SelectedItem != null)
+            {
+                // need to dereferencing the object 
+                // otherwise we need to cast to (int,string,string...) exactly parameters
+                dynamic selectedPreventivo = PreventivoDataGrid.SelectedItem;
+                int selectedCodPreventivo = selectedPreventivo.CodPreventivo;
+
+                var data = (from p in DB.PREVENTIVI
+                            where p.CodPreventivo == selectedCodPreventivo
+                            select p).First();
+
+                if (data != null)
+                {
+                    new InfoPreventivi(data).ShowDialog();
+                }
+            }
+        }
+
+
     }
 }

@@ -85,9 +85,17 @@
             </TabItem>
             <TabItem Header="Preventivi"  Margin="263,0,-273,0">
                 <Grid Background="#FFE5E5E5">
-                    <Button Content="Nuovo Preventivo" HorizontalAlignment="Left" Margin="10,15,0,0" VerticalAlignment="Top" Width="774" Height="60" FontWeight="Bold" FontSize="20" />
+                    <Button Content="Nuovo Preventivo" HorizontalAlignment="Left" Margin="10,15,0,0" VerticalAlignment="Top" Width="774" Height="60" FontWeight="Bold" FontSize="20" Click="Nuovo_Preventivo_Click" />
                     <Separator HorizontalAlignment="Left" Height="1" Margin="0,90,-5.778,0" VerticalAlignment="Top" Width="800"/>
-                    <DataGrid x:Name="FornitoriDataGrid_Copy" HorizontalAlignment="Left" Height="377" Margin="334,110,0,0" VerticalAlignment="Top" Width="450"/>
+                    <Button Content="Elenco Preventivi" HorizontalAlignment="Left" Margin="10,105,0,0" VerticalAlignment="Top" Width="310" Height="60" FontWeight="Bold" FontSize="16" Click="Elenco_Preventivi_Click" />
+                    <DataGrid x:Name="PreventivoDataGrid" HorizontalAlignment="Left" Height="377" Margin="334,110,0,0" VerticalAlignment="Top" Width="450" MouseDoubleClick="Preventivi_DataGrid_Double_Click" />
+                    <GroupBox Header="Codice Cliente" HorizontalAlignment="Left" Height="53" Margin="10,314,0,0" VerticalAlignment="Top" Width="310" BorderBrush="Black">
+                        <TextBox x:Name="Codice_Cliente_Preventivo" HorizontalAlignment="Left" Height="29" TextWrapping="Wrap" VerticalAlignment="Top" Width="296" Margin="4,0,-1.778,0"/>
+                    </GroupBox>
+                    <GroupBox Header="Data" HorizontalAlignment="Left" Height="53" Margin="10,372,0,0" VerticalAlignment="Top" Width="310" BorderBrush="Black">
+                        <DatePicker x:Name="Data_Preventivo" HorizontalAlignment="Left" Height="29"  VerticalAlignment="Top" Width="296" Margin="4,0,-1.778,0"/>
+                    </GroupBox>
+                    <Button Content="Ricerca" HorizontalAlignment="Left" Margin="205,451,0,0" VerticalAlignment="Top" Width="115" Height="36" FontWeight="Bold" FontSize="16" Click="Ricerca_Preventivo_Click" />
                 </Grid>
             </TabItem>
             <TabItem Header="Impianti Elettrici" Margin="272.444,0,-282.667,0">

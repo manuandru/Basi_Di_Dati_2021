@@ -80,6 +80,12 @@
     <Compile Include="windows\materiali\UpdateMateriali.xaml.cs">
       <DependentUpon>UpdateMateriali.xaml</DependentUpon>
     </Compile>
+    <Compile Include="windows\preventivi\FormPreventivi.xaml.cs">
+      <DependentUpon>FormPreventivi.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="windows\preventivi\InfoPreventivi.xaml.cs">
+      <DependentUpon>InfoPreventivi.xaml</DependentUpon>
+    </Compile>
     <Page Include="windows\clienti\FormAziende.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -170,6 +176,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="windows\materiali\UpdateMateriali.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="windows\preventivi\FormPreventivi.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="windows\preventivi\InfoPreventivi.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
