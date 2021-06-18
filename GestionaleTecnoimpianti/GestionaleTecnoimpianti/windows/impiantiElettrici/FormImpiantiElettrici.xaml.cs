@@ -19,9 +19,32 @@ namespace GestionaleTecnoimpianti.windows.impiantiElettrici
     /// </summary>
     public partial class FormImpiantiElettrici : Window
     {
+        private readonly ClassesTecnoimpiatiDBDataContext db = new ClassesTecnoimpiatiDBDataContext();
+
         public FormImpiantiElettrici()
         {
             InitializeComponent();
+
+            var codClienti = from c in db.CLIENTI
+                             select new { c.CodCliente };
+
+            Codice_Cliente.ItemsSource = codClienti;
+        }
+
+        private void Annulla_Click(object sender, RoutedEventArgs e) => Close();
+
+        private void Inserisci_Click(object sender, RoutedEventArgs e)
+        {
+            if (Codice_Cliente.SelectedIndex != -1 && Data.SelectedDate != null 
+                && Regione.Text != "" && Citta.Text != ""
+                && Via.Text != "" && Numero.Text != "")
+            {
+                
+            }
+            else
+            {
+                MessageBox.Show("Inserisci correttamente tutti i campi");
+            }
         }
     }
 }

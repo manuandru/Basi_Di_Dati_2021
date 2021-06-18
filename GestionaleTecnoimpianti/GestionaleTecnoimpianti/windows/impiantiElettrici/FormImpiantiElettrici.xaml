@@ -4,9 +4,25 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GestionaleTecnoimpianti.windows.impiantiElettrici"
-        mc:Ignorable="d"
-        Title="FormImpiantiElettrici" Height="450" Width="800">
+        Title="Inserimento Nuovo Impianto Elettrico" Height="300" Width="600"
+        WindowStyle="ToolWindow">
     <Grid>
-        
+        <Label Content="Codice Cliente" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="100"/>
+        <ComboBox x:Name="Codice_Cliente" HorizontalAlignment="Left" Height="26" Margin="150,10,0,0" VerticalAlignment="Top" Width="125"/>
+        <Label Content="Data Inizio" HorizontalAlignment="Left" Margin="309,10,0,0" VerticalAlignment="Top" Width="100"/>
+        <DatePicker x:Name="Data" HorizontalAlignment="Left" Height="26" Margin="414,10,0,0" VerticalAlignment="Top" Width="160"/>
+        <Label Content="Regione" HorizontalAlignment="Left" Margin="10,67,0,0" VerticalAlignment="Top" Width="100"/>
+        <TextBox x:Name="Regione" HorizontalAlignment="Left" Height="26" Margin="150,67,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="125"/>
+        <Button Content="Annulla" HorizontalAlignment="Left" Margin="309,234,0,0" VerticalAlignment="Top" Width="125" Background="#FFFF7676" Click="Annulla_Click" />
+        <Button Content="Inserisci" HorizontalAlignment="Left" Margin="449,234,0,0" VerticalAlignment="Top" Width="125" Background="#FF9BFF79" Click="Inserisci_Click" />
+        <Separator HorizontalAlignment="Left" Height="36" Margin="0,31,-0.444,0" VerticalAlignment="Top" Width="596"/>
+        <Label Content="Città" HorizontalAlignment="Left" Margin="10,98,0,0" VerticalAlignment="Top" Width="100"/>
+        <TextBox x:Name="Citta" HorizontalAlignment="Left" Height="26" Margin="150,98,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="125"/>
+        <Label Content="Via" HorizontalAlignment="Left" Margin="309,67,0,0" VerticalAlignment="Top" Width="100"/>
+        <TextBox x:Name="Via" HorizontalAlignment="Left" Height="26" Margin="449,67,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="125"/>
+        <Label Content="Numero" HorizontalAlignment="Left" Margin="309,98,0,0" VerticalAlignment="Top" Width="100"/>
+        <TextBox x:Name="Numero" HorizontalAlignment="Left" Height="26" Margin="449,98,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="125"/>
+        <Label Content="Nota" HorizontalAlignment="Left" Margin="10,143,0,0" VerticalAlignment="Top" Width="100"/>
+        <TextBox x:Name="Nota" HorizontalAlignment="Left" Height="80" Margin="10,174,0,0" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" VerticalAlignment="Top" Width="265"/>
     </Grid>
 </Window>
