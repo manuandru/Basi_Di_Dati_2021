@@ -29,7 +29,7 @@
         <Label Content="Quantità" HorizontalAlignment="Left" Margin="10,177,0,0" VerticalAlignment="Top" Width="150"/>
         <TextBox x:Name="Quantita_Materiale" HorizontalAlignment="Left" Margin="165,177,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="125" Height="26"/>
         <Label Content="Nota" HorizontalAlignment="Left" Margin="10,208,0,0" VerticalAlignment="Top" Width="150"/>
-        <TextBox x:Name="Nota_Materiale" HorizontalAlignment="Left" Height="60" Margin="10,239,0,0" VerticalAlignment="Top" Width="280" />
+        <TextBox x:Name="Nota_Materiale" HorizontalAlignment="Left" Height="70" Margin="10,234,0,0" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" VerticalAlignment="Top" Width="280"/>
         <Separator HorizontalAlignment="Left" Height="20" Margin="0,339,0,0" VerticalAlignment="Top" Width="300"/>
         <Button Content="Aggiungi Materiale" HorizontalAlignment="Left" Margin="10,309,0,0" VerticalAlignment="Top" Width="280" Height="30" FontSize="16" FontWeight="Bold" Click="Aggiungi_Materiale" />
         <Button Content="CONFERMA" HorizontalAlignment="Left" Margin="10,359,0,0" VerticalAlignment="Top" Width="280" Height="49" FontSize="20" FontWeight="Bold" Background="#FF9BFF71" Click="Conferma"/>
