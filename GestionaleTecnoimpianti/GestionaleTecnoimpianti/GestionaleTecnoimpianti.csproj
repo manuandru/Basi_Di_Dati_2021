@@ -74,6 +74,12 @@
     <Compile Include="windows\fornitori\FormFornitori.xaml.cs">
       <DependentUpon>FormFornitori.xaml</DependentUpon>
     </Compile>
+    <Compile Include="windows\impiantiElettrici\FormImpiantiElettrici.xaml.cs">
+      <DependentUpon>FormImpiantiElettrici.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="windows\impiantiElettrici\InfoImpianti.xaml.cs">
+      <DependentUpon>InfoImpianti.xaml</DependentUpon>
+    </Compile>
     <Compile Include="windows\materiali\FormMateriali.xaml.cs">
       <DependentUpon>FormMateriali.xaml</DependentUpon>
     </Compile>
@@ -123,6 +129,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="windows\furgoni\UpdateFurgoni.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="windows\impiantiElettrici\FormImpiantiElettrici.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="windows\impiantiElettrici\InfoImpianti.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

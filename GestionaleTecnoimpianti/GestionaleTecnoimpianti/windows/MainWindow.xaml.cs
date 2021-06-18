@@ -3,6 +3,7 @@ using GestionaleTecnoimpianti.windows.clienti;
 using GestionaleTecnoimpianti.windows.elettricisti;
 using GestionaleTecnoimpianti.windows.fornitori;
 using GestionaleTecnoimpianti.windows.furgoni;
+using GestionaleTecnoimpianti.windows.impiantiElettrici;
 using GestionaleTecnoimpianti.windows.materiali;
 using GestionaleTecnoimpianti.windows.preventivi;
 using System;
@@ -447,6 +448,66 @@ namespace GestionaleTecnoimpianti
             }
         }
 
+        private void Nuovo_ImpiantoElettrico_Click(object sender, RoutedEventArgs e)
+        {
+            new FormImpiantiElettrici().ShowDialog();
+        }
+
+        private void Elenco_ImpiantiElettrici_Click(object sender, RoutedEventArgs e)
+        {
+            var impiantiElettrici = from i in DB.IMPIANTI_ELETTRICI
+                                    select new { i.CodImpianto, i.CodCliente, i.DataInizio, i.DataFine };
+
+            ImpiantoElettricoDataGrid.ItemsSource = impiantiElettrici;
+        }
+
+        private void Ricerca_ImpiantiElettrico_Click(object sender, RoutedEventArgs e)
+        {
+            var impiantoElettrico = from i in DB.IMPIANTI_ELETTRICI
+                                    select new { i.CodImpianto, i.CodCliente, i.DataInizio, i.DataFine };
+
+            if (Codice_Cliente_Impianto.Text != "")
+            {
+                impiantoElettrico = impiantoElettrico.Where(elem => elem.CodCliente == int.Parse(Codice_Cliente_Impianto.Text));
+            }
+
+            if (DataInizio_Impianto.SelectedDate != null)
+            {
+                impiantoElettrico = impiantoElettrico.Where(elem => elem.DataInizio == DataInizio_Impianto.SelectedDate);
+            }
+
+            if (ImpiantoFinito_Checkbox.IsChecked.Value)
+            {
+                impiantoElettrico = impiantoElettrico.Where(elem => elem.DataFine != null);
+            }
+
+            ImpiantoElettricoDataGrid.ItemsSource = impiantoElettrico;
+        }
+
+        /// <summary>
+        /// Launch the information FORM for (ImpiantoElettrico)
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ImpiantoElettrico_DataGrid_Double_Click(object sender, MouseButtonEventArgs e)
+        {
+            if (ImpiantoElettricoDataGrid.SelectedItem != null)
+            {
+                // need to dereferencing the object 
+                // otherwise we need to cast to (int,string,string...) exactly parameters
+                dynamic selectedImpiantoElettrico = ImpiantoElettricoDataGrid.SelectedItem;
+                int selectedCodImpianto = selectedImpiantoElettrico.CodImpianto;
+
+                var data = (from i in DB.IMPIANTI_ELETTRICI
+                            where i.CodImpianto == selectedCodImpianto
+                            select i).First();
+
+                if (data != null)
+                {
+                    new InfoImpianti(data).ShowDialog();
+                }
+            }
+        }
 
     }
 }
