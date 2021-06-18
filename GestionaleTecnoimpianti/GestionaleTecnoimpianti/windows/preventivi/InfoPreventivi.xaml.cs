@@ -44,7 +44,7 @@ namespace GestionaleTecnoimpianti.windows.preventivi
 
             MaterialiDataGrid.ItemsSource = materiali;
 
-            Totale.Content = materiali.Sum(m => m.Quantità * m.Prezzo) + " €";
+            Totale.Content = Math.Round(materiali.Sum(m => m.Quantità * m.Prezzo),2) + " €";
         }
     }
 }

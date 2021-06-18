@@ -87,7 +87,7 @@
                 <Grid Background="#FFE5E5E5">
                     <Button Content="Nuovo Preventivo" HorizontalAlignment="Left" Margin="10,15,0,0" VerticalAlignment="Top" Width="774" Height="60" FontWeight="Bold" FontSize="20" Click="Nuovo_Preventivo_Click" />
                     <Separator HorizontalAlignment="Left" Height="1" Margin="0,90,-5.778,0" VerticalAlignment="Top" Width="800"/>
-                    <Button Content="Elenco Preventivi" HorizontalAlignment="Left" Margin="10,105,0,0" VerticalAlignment="Top" Width="310" Height="60" FontWeight="Bold" FontSize="16" Click="Elenco_Preventivi_Click" />
+                    <Button Content="Elenco Preventivi" HorizontalAlignment="Left" Margin="10,110,0,0" VerticalAlignment="Top" Width="310" Height="60" FontWeight="Bold" FontSize="16" Click="Elenco_Preventivi_Click" />
                     <DataGrid x:Name="PreventivoDataGrid" HorizontalAlignment="Left" Height="377" Margin="334,110,0,0" VerticalAlignment="Top" Width="450" MouseDoubleClick="Preventivi_DataGrid_Double_Click" />
                     <GroupBox Header="Codice Cliente" HorizontalAlignment="Left" Height="53" Margin="10,314,0,0" VerticalAlignment="Top" Width="310" BorderBrush="Black">
                         <TextBox x:Name="Codice_Cliente_Preventivo" HorizontalAlignment="Left" Height="29" TextWrapping="Wrap" VerticalAlignment="Top" Width="296" Margin="4,0,-1.778,0"/>
