@@ -132,6 +132,22 @@
                     <DataGrid x:Name="TurniLavorativiDataGrid" HorizontalAlignment="Left" Height="377" Margin="334,110,0,0" VerticalAlignment="Top" Width="450" MouseDoubleClick="TurniLavorativi_DataGrid_Double_Click" />
                 </Grid>
             </TabItem>
+            <TabItem Header="Ore Lavorative" Margin="-298.222,0,278.444,0">
+                <Grid Background="#FFE5E5E5">
+                    <Label Content="Codice Fiscale Elettricista" HorizontalAlignment="Left" Margin="10,92,0,0" VerticalAlignment="Top" Width="185"/>
+                    <ComboBox x:Name="CodiceElettricista" HorizontalAlignment="Left" Margin="10,123,0,0" VerticalAlignment="Top" Width="185"/>
+                    <Label Content="Data Assunzione Elettricista" HorizontalAlignment="Left" Margin="10,163,0,0" VerticalAlignment="Top" Width="185"/>
+                    <ComboBox x:Name="DataElettricista" HorizontalAlignment="Left" Margin="10,194,0,0" VerticalAlignment="Top" Width="185"/>
+                    <Label Content="Data Inizio Intervallo" HorizontalAlignment="Left" Margin="10,243,0,0" VerticalAlignment="Top" Width="185"/>
+                    <DatePicker x:Name="DataInizio" HorizontalAlignment="Left" Margin="10,274,0,0" VerticalAlignment="Top" Width="185"/>
+                    <Label Content="Data Fine Intervallo" HorizontalAlignment="Left" Margin="10,319,0,0" VerticalAlignment="Top" Width="185"/>
+                    <DatePicker x:Name="DataFine" HorizontalAlignment="Left" Margin="10,350,0,0" VerticalAlignment="Top" Width="185"/>
+                    <Button Content="Calcola" HorizontalAlignment="Left" Margin="10,400,0,0" VerticalAlignment="Top" Width="185" Height="55" FontSize="22" FontWeight="Bold" Background="#FFA6FD7D" Click="Button_Click"/>
+                    <Label Content="Calcolo ore Lavorative Elettricisti" Margin="221,10,0,0" Height="48" Width="386" FontSize="24" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                    <DataGrid x:Name="OreLavorativeDataGrid" HorizontalAlignment="Left" Height="395" Margin="265,92,0,0" VerticalAlignment="Top" Width="519"/>
+
+                </Grid>
+            </TabItem>
         </TabControl>
 
     </Grid>
