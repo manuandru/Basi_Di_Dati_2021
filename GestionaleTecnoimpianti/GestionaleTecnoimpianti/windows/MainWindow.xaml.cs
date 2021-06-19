@@ -265,8 +265,6 @@ namespace GestionaleTecnoimpianti
         {
             if (ElettricistiDataGrid.SelectedItem != null)
             {
-                // need to dereferencing the object 
-                // otherwise we need to cast to (int,string,string...) exactly parameters
                 dynamic selectedElettricista = ElettricistiDataGrid.SelectedItem;
                 string selectedCF = selectedElettricista.CodiceFiscale;
 
@@ -314,8 +312,6 @@ namespace GestionaleTecnoimpianti
         {
             if (FurgoniDataGrid.SelectedItem != null)
             {
-                // need to dereferencing the object 
-                // otherwise we need to cast to (int,string,string...) exactly parameters
                 dynamic selectedFurgone = FurgoniDataGrid.SelectedItem;
                 string selectedTarga = selectedFurgone.Targa;
 
@@ -362,8 +358,6 @@ namespace GestionaleTecnoimpianti
         {
             if (MaterialiDataGrid.SelectedItem != null)
             {
-                // need to dereferencing the object 
-                // otherwise we need to cast to (int,string,string...) exactly parameters
                 dynamic selectedMateriale = MaterialiDataGrid.SelectedItem;
                 int selectedCod = selectedMateriale.CodMateriale;
 
@@ -493,8 +487,6 @@ namespace GestionaleTecnoimpianti
         {
             if (ImpiantoElettricoDataGrid.SelectedItem != null)
             {
-                // need to dereferencing the object 
-                // otherwise we need to cast to (int,string,string...) exactly parameters
                 dynamic selectedImpiantoElettrico = ImpiantoElettricoDataGrid.SelectedItem;
                 int selectedCodImpianto = selectedImpiantoElettrico.CodImpianto;
 
@@ -509,5 +501,14 @@ namespace GestionaleTecnoimpianti
             }
         }
 
+        private void Nuovo_Lavoro_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Elenco_Lavori_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

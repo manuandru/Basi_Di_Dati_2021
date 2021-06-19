@@ -83,7 +83,7 @@
                     <Separator HorizontalAlignment="Left" Height="1" Margin="0,90,-5.778,0" VerticalAlignment="Top" Width="800"/>
                 </Grid>
             </TabItem>
-            <TabItem Header="Preventivi"  Margin="263,0,-273,0">
+            <TabItem Header="Preventivi"  Margin="168,0,-178,0">
                 <Grid Background="#FFE5E5E5">
                     <Button Content="Nuovo Preventivo" HorizontalAlignment="Left" Margin="10,15,0,0" VerticalAlignment="Top" Width="774" Height="60" FontWeight="Bold" FontSize="20" Click="Nuovo_Preventivo_Click" />
                     <Separator HorizontalAlignment="Left" Height="1" Margin="0,90,-5.778,0" VerticalAlignment="Top" Width="800"/>
@@ -98,7 +98,7 @@
                     <Button Content="Ricerca" HorizontalAlignment="Left" Margin="205,451,0,0" VerticalAlignment="Top" Width="115" Height="36" FontWeight="Bold" FontSize="16" Click="Ricerca_Preventivo_Click" />
                 </Grid>
             </TabItem>
-            <TabItem Header="Impianti Elettrici" Margin="272.444,0,-282.667,0">
+            <TabItem Header="Impianti Elettrici" Margin="177.444,0,-187.667,0">
                 <Grid Background="#FFE5E5E5">
                     <Button Content="Nuovo Impianto Elettrico" HorizontalAlignment="Left" Margin="10,15,0,0" VerticalAlignment="Top" Width="774" Height="60" FontWeight="Bold" FontSize="20" Click="Nuovo_ImpiantoElettrico_Click" />
                     <Separator HorizontalAlignment="Left" Height="1" Margin="0,90,-5.778,0" VerticalAlignment="Top" Width="800"/>
@@ -114,9 +114,17 @@
                     <CheckBox x:Name="ImpiantoFinito_Checkbox" Content="Impianto Finito" HorizontalAlignment="Left" Margin="10,439,0,0" VerticalAlignment="Top"/>
                 </Grid>
             </TabItem>
-            <TabItem Header="Lavori" Margin="282.222,0,-302.667,0">
+            <TabItem Header="Lavori" Margin="186.222,0,-206.667,0">
                 <Grid Background="#FFE5E5E5">
-                    <Button Content="Inserisci Lavoro" HorizontalAlignment="Left" Margin="10,15,0,0" VerticalAlignment="Top" Width="774" Height="60" FontWeight="Bold" FontSize="20" />
+                    <Button Content="Inserisci Lavoro" HorizontalAlignment="Left" Margin="10,15,0,0" VerticalAlignment="Top" Width="774" Height="60" FontWeight="Bold" FontSize="20" Click="Nuovo_Lavoro_Click"/>
+                    <Separator HorizontalAlignment="Left" Height="1" Margin="0,90,-5.778,0" VerticalAlignment="Top" Width="800"/>
+                    <Button Content="Elenco Lavori ordinati per Data" HorizontalAlignment="Left" Margin="10,110,0,0" VerticalAlignment="Top" Width="310" Height="60" FontWeight="Bold" FontSize="16" Click="Elenco_Lavori_Click" />
+                    <DataGrid x:Name="LavoriDataGrid" HorizontalAlignment="Left" Height="377" Margin="334,110,0,0" VerticalAlignment="Top" Width="450" MouseDoubleClick="Lavori_DataGrid_Double_Click" />
+                </Grid>
+            </TabItem>
+            <TabItem Header="Turni Lavorativi" Margin="205.667,0,-225.778,0">
+                <Grid Background="#FFE5E5E5">
+                    <Button Content="Registra Nuovo Turno Lavorativo" HorizontalAlignment="Left" Margin="10,15,0,0" VerticalAlignment="Top" Width="774" Height="60" FontWeight="Bold" FontSize="20" />
                 </Grid>
             </TabItem>
         </TabControl>

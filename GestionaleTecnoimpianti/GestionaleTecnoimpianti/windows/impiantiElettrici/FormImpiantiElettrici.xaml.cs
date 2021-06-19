@@ -35,11 +35,36 @@ namespace GestionaleTecnoimpianti.windows.impiantiElettrici
 
         private void Inserisci_Click(object sender, RoutedEventArgs e)
         {
-            if (Codice_Cliente.SelectedIndex != -1 && Data.SelectedDate != null 
+            if (Codice_Cliente.SelectedIndex != -1 && Data.SelectedDate != null
                 && Regione.Text != "" && Citta.Text != ""
                 && Via.Text != "" && Numero.Text != "")
             {
-                
+                dynamic Cliente = Codice_Cliente.SelectedItem;
+
+                IMPIANTI_ELETTRICI NewImpianto = new IMPIANTI_ELETTRICI()
+                {
+                    CodImpianto = db.IMPIANTI_ELETTRICI.Count() + 1,
+                    CodCliente = Cliente.CodCliente,
+                    DataInizio = Data.SelectedDate.Value,
+                    Regione = Regione.Text,
+                    Città = Citta.Text,
+                    Via = Via.Text,
+                    Numero = int.Parse(Numero.Text),
+                    Note = Nota.Text != "" ? Nota.Text : null
+                };
+
+                db.IMPIANTI_ELETTRICI.InsertOnSubmit(NewImpianto);
+
+                try
+                {
+                    db.SubmitChanges();
+                    MessageBox.Show("Valori inseriti correttamente");
+                    Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Violazione Database: " + ex);
+                }
             }
             else
             {

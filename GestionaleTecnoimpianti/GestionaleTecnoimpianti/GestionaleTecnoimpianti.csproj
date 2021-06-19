@@ -80,6 +80,9 @@
     <Compile Include="windows\impiantiElettrici\InfoImpianti.xaml.cs">
       <DependentUpon>InfoImpianti.xaml</DependentUpon>
     </Compile>
+    <Compile Include="windows\lavori\InfoLavori.xaml.cs">
+      <DependentUpon>InfoLavori.xaml</DependentUpon>
+    </Compile>
     <Compile Include="windows\materiali\FormMateriali.xaml.cs">
       <DependentUpon>FormMateriali.xaml</DependentUpon>
     </Compile>
@@ -137,6 +140,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="windows\impiantiElettrici\InfoImpianti.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="windows\lavori\InfoLavori.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

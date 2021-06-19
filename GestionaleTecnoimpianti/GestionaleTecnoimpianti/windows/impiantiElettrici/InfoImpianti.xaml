@@ -4,9 +4,29 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GestionaleTecnoimpianti.windows.impiantiElettrici"
-        mc:Ignorable="d"
-        Title="InfoImpianti" Height="450" Width="800">
+        Title="Info Impianti" Height="420" Width="800">
     <Grid>
-        
+        <Label Content="CodCliente" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="100"/>
+        <Label x:Name="CodCliente" HorizontalAlignment="Left" Margin="100,10,0,0" VerticalAlignment="Top" Width="100" Height="26"/>
+        <Label Content="CodImpianto" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top" Width="100"/>
+        <Label x:Name="CodImpianto" HorizontalAlignment="Left" Margin="100,41,0,0" VerticalAlignment="Top" Width="100" Height="26"/>
+        <Label Content="Data Inizio" HorizontalAlignment="Left" Margin="10,72,0,0" VerticalAlignment="Top" Width="100"/>
+        <Label x:Name="DataInizio" HorizontalAlignment="Left" Margin="100,72,0,0" VerticalAlignment="Top" Width="100" Height="26"/>
+        <Label Content="Regione" HorizontalAlignment="Left" Margin="246,10,0,0" VerticalAlignment="Top" Width="100"/>
+        <Label x:Name="Regione" HorizontalAlignment="Left" Margin="327,10,0,0" VerticalAlignment="Top" Width="100" Height="26"/>
+        <Label Content="Città" HorizontalAlignment="Left" Margin="246,41,0,0" VerticalAlignment="Top" Width="100"/>
+        <Label x:Name="Citta" HorizontalAlignment="Left" Margin="327,41,0,0" VerticalAlignment="Top" Width="100" Height="26"/>
+        <Label Content="Via" HorizontalAlignment="Left" Margin="246,72,0,0" VerticalAlignment="Top" Width="100"/>
+        <Label x:Name="Via" HorizontalAlignment="Left" Margin="327,72,0,0" VerticalAlignment="Top" Width="100" Height="26"/>
+        <Label Content="Numero" HorizontalAlignment="Left" Margin="470,10,0,0" VerticalAlignment="Top" Width="100"/>
+        <Label x:Name="Numero" HorizontalAlignment="Left" Margin="570,10,0,0" VerticalAlignment="Top" Width="100" Height="26"/>
+        <Label Content="Note" HorizontalAlignment="Left" Margin="470,50,0,0" VerticalAlignment="Top" Width="100"/>
+        <TextBox x:Name="Note" VerticalScrollBarVisibility="Auto" HorizontalAlignment="Left" Height="48" Margin="565,50,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="209" IsEnabled="False"/>
+        <DataGrid x:Name="LavoriImpiantoDataGrid" HorizontalAlignment="Left" Height="225" Margin="381,133,0,0" VerticalAlignment="Top" Width="393" MouseDoubleClick="Lavori_DataGrid_Double_Click" />
+        <Label Content="Data Fine" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,133,0,0" Width="100"/>
+        <DatePicker x:Name="DataFine" HorizontalAlignment="Left" Margin="10,164,0,0" VerticalAlignment="Top" Width="260"/>
+        <Button x:Name="Aggiungi_DataFine_Button" Content="Aggiungi Data Fine Impianto" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" Margin="10,193,0,0" Height="24" Click="Aggiungi_DataFine_Click"/>
+        <Label Content="Costo Totale" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,332,0,0" Width="100"/>
+        <Label x:Name="CostoTotale" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="115,332,0,0" Width="130" Height="26"/>
     </Grid>
 </Window>
