@@ -4,9 +4,24 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GestionaleTecnoimpianti.windows.turniLavorativi"
-        mc:Ignorable="d"
-        Title="FormTurniLavorativi" Height="450" Width="800">
+        Title="Inserimento Nuovo Turno Lavorativo" Height="350" Width="295"
+        WindowStyle="ToolWindow">
     <Grid>
-        
+        <Label Content="Elettricista" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="115"/>
+        <ComboBox x:Name="CodElettricista" HorizontalAlignment="Left" Margin="150,10,0,0" VerticalAlignment="Top" Width="120" Height="26"/>
+        <Label Content="Codice Impianto" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top" Width="115"/>
+        <ComboBox x:Name="CodImpianto" HorizontalAlignment="Left" Margin="150,41,0,0" VerticalAlignment="Top" Width="120" Height="26" SelectionChanged="CodImpianto_SelectionChanged"/>
+        <Label Content="Data Lavoro" HorizontalAlignment="Left" Margin="10,72,0,0" VerticalAlignment="Top" Width="115"/>
+        <ComboBox x:Name="DataLavoro" HorizontalAlignment="Left" Margin="150,72,0,0" VerticalAlignment="Top" Width="120" Height="26"/>
+        <Label Content="Targa Veicolo" HorizontalAlignment="Left" Margin="10,103,0,0" VerticalAlignment="Top" Width="115"/>
+        <ComboBox x:Name="Targa" HorizontalAlignment="Left" Margin="150,103,0,0" VerticalAlignment="Top" Width="120" Height="26"/>
+        <Label Content="Ora Inizio (hh:mm)" HorizontalAlignment="Left" Margin="10,134,0,0" VerticalAlignment="Top" Width="115"/>
+        <TextBox x:Name="OraInizio" HorizontalAlignment="Left" Height="26" Margin="150,134,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Ora Fine (hh:mm)" HorizontalAlignment="Left" Margin="10,165,0,0" VerticalAlignment="Top" Width="115"/>
+        <TextBox x:Name="OraFine" HorizontalAlignment="Left" Height="26" Margin="150,165,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Nota" HorizontalAlignment="Left" Margin="10,196,0,0" VerticalAlignment="Top" Width="115"/>
+        <TextBox x:Name="Nota" HorizontalAlignment="Left" Height="57" Margin="10,222,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="265"/>
+        <Button Content="Annulla" HorizontalAlignment="Left" Margin="10,284,0,0" VerticalAlignment="Top" Width="125" Background="#FFFF7676" Click="Annulla_Click" />
+        <Button Content="Inserisci" HorizontalAlignment="Left" Margin="150,284,0,0" VerticalAlignment="Top" Width="125" Background="#FF9BFF79" Click="Inserisci_Click" />
     </Grid>
 </Window>
