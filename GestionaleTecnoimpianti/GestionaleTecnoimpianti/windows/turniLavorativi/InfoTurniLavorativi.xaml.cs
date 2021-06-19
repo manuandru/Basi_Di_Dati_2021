@@ -19,9 +19,20 @@ namespace GestionaleTecnoimpianti.windows.turniLavorativi
     /// </summary>
     public partial class InfoTurniLavorativi : Window
     {
+        private readonly ClassesTecnoimpiatiDBDataContext db = new ClassesTecnoimpiatiDBDataContext();
+
         public InfoTurniLavorativi(TURNI_LAVORATIVI turno)
         {
             InitializeComponent();
+
+            CodElettricista.Content = turno.CodiceFiscale;
+            CodImpianto.Content = turno.CodImpianto;
+            DataLavoro.Content = turno.DataLavoro;
+            Targa.Content = turno.Targa;
+            OraInizio.Content = turno.OraInizio;
+            OraFine.Content = turno.OraFine;
+            OreLavorate.Content = turno.OraFine - turno.OraInizio;
+            Nota.Text = turno.Nota;
         }
     }
 }

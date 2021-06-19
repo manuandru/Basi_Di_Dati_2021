@@ -4,9 +4,24 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GestionaleTecnoimpianti.windows.turniLavorativi"
-        mc:Ignorable="d"
-        Title="InfoTurniLavorativi" Height="450" Width="800">
+       Title="Info Turno Lavorativo" Height="350" Width="350"
+        WindowStyle="ToolWindow">
     <Grid>
-        
+        <Label Content="Codice Fiscale Elettricista" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="150"/>
+        <Label x:Name="CodElettricista" HorizontalAlignment="Left" Margin="160,10,0,0" VerticalAlignment="Top" Width="169" Height="26"/>
+        <Label Content="Codice Impianto" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top" Width="150"/>
+        <Label x:Name="CodImpianto" HorizontalAlignment="Left" Margin="160,41,0,0" VerticalAlignment="Top" Width="169" Height="26"/>
+        <Label Content="Data Lavoro" HorizontalAlignment="Left" Margin="10,72,0,0" VerticalAlignment="Top" Width="150"/>
+        <Label x:Name="DataLavoro" HorizontalAlignment="Left" Margin="160,72,0,0" VerticalAlignment="Top" Width="169" Height="26"/>
+        <Label Content="Targa Veicolo" HorizontalAlignment="Left" Margin="10,103,0,0" VerticalAlignment="Top" Width="150"/>
+        <Label x:Name="Targa" HorizontalAlignment="Left" Margin="160,103,0,0" VerticalAlignment="Top" Width="169" Height="26"/>
+        <Label Content="Ora Inizio" HorizontalAlignment="Left" Margin="10,134,0,0" VerticalAlignment="Top" Width="150"/>
+        <Label x:Name="OraInizio" HorizontalAlignment="Left" Margin="160,134,0,0" VerticalAlignment="Top" Width="169" Height="26"/>
+        <Label Content="Ora Fine" HorizontalAlignment="Left" Margin="10,165,0,0" VerticalAlignment="Top" Width="150"/>
+        <Label x:Name="OraFine" HorizontalAlignment="Left" Margin="160,165,0,0" VerticalAlignment="Top" Width="169" Height="26"/>
+        <Label Content="Ore Lavorate" HorizontalAlignment="Left" Margin="10,196,0,0" VerticalAlignment="Top" Width="150"/>
+        <Label x:Name="OreLavorate" HorizontalAlignment="Left" Margin="160,196,0,0" VerticalAlignment="Top" Width="169" Height="26"/>
+        <Label Content="Nota" HorizontalAlignment="Left" Margin="10,226,0,0" VerticalAlignment="Top" Width="150"/>
+        <TextBox x:Name="Nota" HorizontalAlignment="Left" Height="51" Margin="10,256,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="319" IsEnabled="False"/>
     </Grid>
 </Window>
