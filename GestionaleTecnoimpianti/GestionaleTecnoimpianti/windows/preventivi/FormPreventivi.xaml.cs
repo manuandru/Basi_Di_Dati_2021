@@ -61,7 +61,7 @@ namespace GestionaleTecnoimpianti.windows.preventivi
                     CodMateriale = (int)Codice_Materiale.SelectedItem,
                     CodPreventivo = codicePreventivo,
                     Quantità = int.Parse(Quantita_Materiale.Text),
-                    Nota = Nota_Materiale.Text
+                    Nota = Nota_Materiale.Text != "" ? Nota_Materiale.Text : null
                 };
 
                 ParzialeDataGrid.ItemsSource = null;
