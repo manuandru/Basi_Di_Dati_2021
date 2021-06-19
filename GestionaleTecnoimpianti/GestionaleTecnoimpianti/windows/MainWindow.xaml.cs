@@ -7,6 +7,7 @@ using GestionaleTecnoimpianti.windows.impiantiElettrici;
 using GestionaleTecnoimpianti.windows.lavori;
 using GestionaleTecnoimpianti.windows.materiali;
 using GestionaleTecnoimpianti.windows.preventivi;
+using GestionaleTecnoimpianti.windows.turniLavorativi;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -560,6 +561,50 @@ namespace GestionaleTecnoimpianti
         private void Inserisci_Tipologia_Click(object sender, RoutedEventArgs e)
         {
             new FormTipologie().ShowDialog();
+        }
+
+        private void Inserisci_TurnoLavorativo_Click(object sender, RoutedEventArgs e)
+        {
+            new FormTurniLavorativi().ShowDialog();
+        }
+
+        private void Elenco_TurniLavorativi_Click(object sender, RoutedEventArgs e)
+        {
+            var TurniLavorativi = from t in DB.TURNI_LAVORATIVI
+                                  orderby t.DataLavoro descending
+                                  select new { t.CodImpianto, t.DataLavoro, t.OraInizio, t.OraFine, t.CodiceFiscale, 
+                                      t.DataInizioElettricista, TargaMezzo = t.Targa, t.Nota };
+
+            TurniLavorativiDataGrid.ItemsSource = TurniLavorativi;
+        }
+
+        /// <summary>
+        /// Launch the information FORM for (TurniLavorativi)
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void TurniLavorativi_DataGrid_Double_Click(object sender, MouseButtonEventArgs e)
+        {
+            if (TurniLavorativiDataGrid.SelectedItem != null)
+            {
+                dynamic selectedTurnoLavorativo = TurniLavorativiDataGrid.SelectedItem;
+                int selectedCodImpianto = selectedTurnoLavorativo.CodImpianto;
+                DateTime selectedDataLavoro = selectedTurnoLavorativo.DataLavoro;
+                string selectedCodiceFiscale = selectedTurnoLavorativo.CodiceFiscale;
+                DateTime selectedDataInizio = selectedTurnoLavorativo.DataInizioElettricista;
+
+                var data = (from t in DB.TURNI_LAVORATIVI
+                            where t.LAVORI.CodImpianto == selectedCodImpianto
+                            && t.LAVORI.Data == selectedDataLavoro
+                            && t.CodiceFiscale == selectedCodiceFiscale
+                            && t.DataInizioElettricista == selectedDataInizio
+                            select t).First();
+
+                if (data != null)
+                {
+                    new InfoTurniLavorativi(data).ShowDialog();
+                }
+            }
         }
     }
 }
