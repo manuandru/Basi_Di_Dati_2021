@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GestionaleTecnoimpianti.windows.turniLavorativi;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,10 +21,12 @@ namespace GestionaleTecnoimpianti.windows.lavori
     public partial class InfoLavori : Window
     {
         private readonly ClassesTecnoimpiatiDBDataContext db = new ClassesTecnoimpiatiDBDataContext();
+        private readonly LAVORI Lavoro;
 
         public InfoLavori(LAVORI lavoro)
         {
             InitializeComponent();
+            this.Lavoro = lavoro;
 
             CodImpianto.Content = lavoro.CodImpianto.ToString();
             Data_Lavoro.Content = lavoro.Data.Date.ToString();
@@ -39,6 +42,28 @@ namespace GestionaleTecnoimpianti.windows.lavori
                             select new { t.CodiceFiscale, t.DataInizioElettricista, t.OraInizio, t.OraFine, t.Nota};
 
             TurniLavorativiDataGrid.ItemsSource = TurniLavorativi;
+        }
+
+        private void TurniLavorativi_DataGrid_Double_Click(object sender, MouseButtonEventArgs e)
+        {
+            if (TurniLavorativiDataGrid.SelectedItem != null)
+            {
+                dynamic selectedTurnoLavorativo = TurniLavorativiDataGrid.SelectedItem;
+                string selectedCodiceFiscale = selectedTurnoLavorativo.CodiceFiscale;
+                DateTime selectedDataInizio = selectedTurnoLavorativo.DataInizioElettricista;
+                
+                var data = (from t in db.TURNI_LAVORATIVI
+                            where t.LAVORI.CodImpianto == Lavoro.CodImpianto
+                            && t.LAVORI.Data == Lavoro.Data
+                            && t.CodiceFiscale == selectedCodiceFiscale
+                            && t.DataInizioElettricista == selectedDataInizio
+                            select t).First();
+               
+                if (data != null)
+                {
+                    new InfoTurniLavorativi(data).ShowDialog();
+                }
+            }
         }
     }
 }

@@ -19,7 +19,7 @@
         <Label Content="Materiali Usati" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,95,0,0" Height="40" Width="207" FontWeight="Bold" FontSize="20"/>
         <DataGrid x:Name="MaterialiDataGrid" HorizontalAlignment="Left" Height="260" Margin="10,140,0,0" VerticalAlignment="Top" Width="360"/>
         <Label Content="Turni Lavorativi" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="400,95,0,0" Height="40" Width="207" FontWeight="Bold" FontSize="20"/>
-        <DataGrid x:Name="TurniLavorativiDataGrid" HorizontalAlignment="Left" Height="260" Margin="400,140,0,0" VerticalAlignment="Top" Width="360"/>
+        <DataGrid x:Name="TurniLavorativiDataGrid" HorizontalAlignment="Left" Height="260" Margin="400,140,0,0" VerticalAlignment="Top" Width="360" MouseDoubleClick="TurniLavorativi_DataGrid_Double_Click" />
 
     </Grid>
 </Window>

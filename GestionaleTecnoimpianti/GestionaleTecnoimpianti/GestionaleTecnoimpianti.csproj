@@ -101,6 +101,12 @@
     <Compile Include="windows\preventivi\InfoPreventivi.xaml.cs">
       <DependentUpon>InfoPreventivi.xaml</DependentUpon>
     </Compile>
+    <Compile Include="windows\turniLavorativi\FormTurniLavorativi.xaml.cs">
+      <DependentUpon>FormTurniLavorativi.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="windows\turniLavorativi\InfoTurniLavorativi.xaml.cs">
+      <DependentUpon>InfoTurniLavorativi.xaml</DependentUpon>
+    </Compile>
     <Page Include="windows\clienti\FormAziende.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -219,6 +225,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="windows\preventivi\InfoPreventivi.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="windows\turniLavorativi\FormTurniLavorativi.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="windows\turniLavorativi\InfoTurniLavorativi.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
