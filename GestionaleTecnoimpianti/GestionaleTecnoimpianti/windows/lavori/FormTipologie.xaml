@@ -4,9 +4,16 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GestionaleTecnoimpianti.windows.lavori"
-        mc:Ignorable="d"
-        Title="FormTipologie" Height="450" Width="800">
+        Title="Inserimento Nuova Tipologia" Height="400" Width="295"
+        WindowStyle="ToolWindow">
     <Grid>
-        
+        <Label Content="Nome" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="100"/>
+        <TextBox x:Name="Nome" HorizontalAlignment="Left" Height="26" Margin="150,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="125"/>
+        <Label Content="Descrizione" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top" Width="100"/>
+        <TextBox x:Name="Descrizione" HorizontalAlignment="Left" Height="83" Margin="10,72,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="265"/>
+        <Button Content="Annulla" HorizontalAlignment="Left" Margin="10,160,0,0" VerticalAlignment="Top" Width="125" Background="#FFFF7676" Click="Annulla_Click" />
+        <Button Content="Inserisci" HorizontalAlignment="Left" Margin="150,160,0,0" VerticalAlignment="Top" Width="125" Background="#FF9BFF79" Click="Inserisci_Click" />
+        <Separator HorizontalAlignment="Left" Height="10" Margin="0,185,-0.333,0" VerticalAlignment="Top" Width="291"/>
+        <DataGrid x:Name="TipologieDataGrid" HorizontalAlignment="Left" Height="151" Margin="10,200,0,0" VerticalAlignment="Top" Width="265"/>
     </Grid>
 </Window>

@@ -21,7 +21,7 @@ namespace GestionaleTecnoimpianti.windows.impiantiElettrici
     public partial class InfoImpianti : Window
     {
         private readonly ClassesTecnoimpiatiDBDataContext db = new ClassesTecnoimpiatiDBDataContext();
-        private IMPIANTI_ELETTRICI Impianto;
+        private readonly IMPIANTI_ELETTRICI Impianto;
 
         public InfoImpianti(IMPIANTI_ELETTRICI impianto)
         {

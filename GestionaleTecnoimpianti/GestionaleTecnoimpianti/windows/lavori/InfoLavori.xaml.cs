@@ -19,9 +19,26 @@ namespace GestionaleTecnoimpianti.windows.lavori
     /// </summary>
     public partial class InfoLavori : Window
     {
+        private readonly ClassesTecnoimpiatiDBDataContext db = new ClassesTecnoimpiatiDBDataContext();
+
         public InfoLavori(LAVORI lavoro)
         {
             InitializeComponent();
+
+            CodImpianto.Content = lavoro.CodImpianto.ToString();
+            Data_Lavoro.Content = lavoro.Data.Date.ToString();
+            NomeTipologia.Content = lavoro.TIPOLOGIE.Nome;
+            Costo.Content = lavoro.Costo.ToString();
+
+            var Materiali = from m in lavoro.DETTAGLI_MATERIALI
+                            select new { m.CodMateriale, m.MATERIALI.Nome, m.Quantità, m.Prezzo, m.Sconto, m.Nota };
+
+            MaterialiDataGrid.ItemsSource = Materiali;
+
+            var TurniLavorativi = from t in lavoro.TURNI_LAVORATIVI
+                            select new { t.CodiceFiscale, t.DataInizioElettricista, t.OraInizio, t.OraFine, t.Nota};
+
+            TurniLavorativiDataGrid.ItemsSource = TurniLavorativi;
         }
     }
 }

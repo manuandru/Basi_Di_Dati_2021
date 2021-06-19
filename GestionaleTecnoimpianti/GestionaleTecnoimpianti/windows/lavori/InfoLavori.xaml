@@ -5,8 +5,21 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GestionaleTecnoimpianti.windows.lavori"
         mc:Ignorable="d"
-        Title="InfoLavori" Height="450" Width="800">
+        Title="Info Lavoro" Height="450" Width="800">
     <Grid>
-        
+        <Label Content="Codice Impianto" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="110"/>
+        <Label x:Name="CodImpianto" HorizontalAlignment="Left" Margin="120,10,0,0" VerticalAlignment="Top" Width="110" Height="26"/>
+        <Label Content="Data Lavoro" HorizontalAlignment="Left" Margin="311,10,0,0" VerticalAlignment="Top" Width="110"/>
+        <Label x:Name="Data_Lavoro" HorizontalAlignment="Left" Margin="400,10,0,0" VerticalAlignment="Top" Width="125" Height="26"/>
+        <Label Content="Tipologia" HorizontalAlignment="Left" Margin="10,49,0,0" VerticalAlignment="Top" Width="110"/>
+        <Label x:Name="NomeTipologia" HorizontalAlignment="Left" Margin="120,49,0,0" VerticalAlignment="Top" Width="110" Height="26"/>
+        <Label Content="Costo" HorizontalAlignment="Left" Margin="311,49,0,0" VerticalAlignment="Top" Width="110"/>
+        <Label x:Name="Costo" HorizontalAlignment="Left" Margin="400,49,0,0" VerticalAlignment="Top" Width="125" Height="26"/>
+        <Separator HorizontalAlignment="Left" Height="10" Margin="0,80,-0.444,0" VerticalAlignment="Top" Width="796"/>
+        <Label Content="Materiali Usati" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,95,0,0" Height="40" Width="207" FontWeight="Bold" FontSize="20"/>
+        <DataGrid x:Name="MaterialiDataGrid" HorizontalAlignment="Left" Height="260" Margin="10,140,0,0" VerticalAlignment="Top" Width="360"/>
+        <Label Content="Turni Lavorativi" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="400,95,0,0" Height="40" Width="207" FontWeight="Bold" FontSize="20"/>
+        <DataGrid x:Name="TurniLavorativiDataGrid" HorizontalAlignment="Left" Height="260" Margin="400,140,0,0" VerticalAlignment="Top" Width="360"/>
+
     </Grid>
 </Window>
