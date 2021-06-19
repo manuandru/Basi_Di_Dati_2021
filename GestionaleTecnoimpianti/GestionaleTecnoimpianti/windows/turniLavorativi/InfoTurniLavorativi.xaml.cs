@@ -19,8 +19,6 @@ namespace GestionaleTecnoimpianti.windows.turniLavorativi
     /// </summary>
     public partial class InfoTurniLavorativi : Window
     {
-        private readonly ClassesTecnoimpiatiDBDataContext db = new ClassesTecnoimpiatiDBDataContext();
-
         public InfoTurniLavorativi(TURNI_LAVORATIVI turno)
         {
             InitializeComponent();
