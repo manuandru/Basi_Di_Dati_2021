@@ -49,7 +49,7 @@ namespace GestionaleTecnoimpianti.windows.materiali
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Violazione DATABASE: " + ex);
+                MessageBox.Show("Violazione DATABASE: " + ex.Message);
             }
         }
     }

@@ -55,9 +55,17 @@ namespace GestionaleTecnoimpianti.windows
                 };
 
                 db.CLIENTI.InsertOnSubmit(newCliente);
-                db.SubmitChanges();
-                MessageBox.Show("Nuova Azienda inserita");
-                Close();
+
+                try
+                {
+                    db.SubmitChanges();
+                    MessageBox.Show("Nuova Azienda inserita");
+                    Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Violazione Database: " + ex.Message);
+                }
             }
             else
             {

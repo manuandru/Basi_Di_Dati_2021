@@ -33,7 +33,6 @@ namespace GestionaleTecnoimpianti.windows.elettricisti
             var ElettricistiNoRuolo = from e in DB.ELETTRICISTI
                                       where e.ELETTRICISTI_CON_RUOLI.Count() == 0 || e.ELETTRICISTI_CON_RUOLI.All(er => er.DataFine != null)
                                       select e.CodiceFiscale;
-            // TODO
             CF.ItemsSource = ElettricistiNoRuolo;
         }
 
@@ -65,9 +64,16 @@ namespace GestionaleTecnoimpianti.windows.elettricisti
 
                 DB.ELETTRICISTI_CON_RUOLI.InsertOnSubmit(newElettricista);
 
-                DB.SubmitChanges();
-                MessageBox.Show("Ruolo assegnato correttamente a Elettricista");
-                Close();
+                try
+                {
+                    DB.SubmitChanges();
+                    MessageBox.Show("Ruolo assegnato correttamente a Elettricista");
+                    Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Violazione Database: " + ex.Message);
+                }
             }
             else
             {

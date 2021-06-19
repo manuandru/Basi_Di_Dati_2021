@@ -54,7 +54,7 @@ namespace GestionaleTecnoimpianti.windows.lavori
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Violazione Database: " + ex);
+                    MessageBox.Show("Violazione Database: " + ex.Message);
                 }
             }
             else

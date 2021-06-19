@@ -42,10 +42,18 @@ namespace GestionaleTecnoimpianti.windows.clienti
                 ClienteToModify.Denominazione = Denominazione.Text;
                 ClienteToModify.Telefono = Telefono.Text;
 
-                db.SubmitChanges();
 
-                MessageBox.Show("Valori aggiornati correttamente");
-                Close();
+                
+                try
+                {
+                    db.SubmitChanges();
+                    MessageBox.Show("Valori aggiornati correttamente");
+                    Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Violazione Database: " + ex.Message);
+                }
             }
             else
             {

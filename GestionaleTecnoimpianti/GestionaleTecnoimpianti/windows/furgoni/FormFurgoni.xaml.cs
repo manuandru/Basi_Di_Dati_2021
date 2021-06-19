@@ -56,7 +56,7 @@ namespace GestionaleTecnoimpianti.windows.furgoni
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Violazione DATABASE: " + ex);
+                    MessageBox.Show("Violazione DATABASE: " + ex.Message);
                 }
             }
             else

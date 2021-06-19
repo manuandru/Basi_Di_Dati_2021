@@ -105,7 +105,7 @@ namespace GestionaleTecnoimpianti.windows.preventivi
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("VIOLAZIONE DATABASE: " + ex);
+                    MessageBox.Show("VIOLAZIONE DATABASE: " + ex.Message);
                 }
 
             }

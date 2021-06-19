@@ -63,7 +63,7 @@ namespace GestionaleTecnoimpianti.windows.impiantiElettrici
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Violazione Database: " + ex);
+                    MessageBox.Show("Violazione Database: " + ex.Message);
                 }
             }
             else

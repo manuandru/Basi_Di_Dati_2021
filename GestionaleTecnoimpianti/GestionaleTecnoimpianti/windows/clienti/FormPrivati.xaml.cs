@@ -57,9 +57,17 @@ namespace GestionaleTecnoimpianti.windows
                 };
 
                 db.CLIENTI.InsertOnSubmit(newCliente);
-                db.SubmitChanges();
-                MessageBox.Show("Nuovo Cliente Privato registrato");
-                Close();
+                
+                try
+                {
+                    db.SubmitChanges();
+                    MessageBox.Show("Nuovo Cliente Privato registrato");
+                    Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Violazione Database: " + ex.Message);
+                }
             }
             else
             {

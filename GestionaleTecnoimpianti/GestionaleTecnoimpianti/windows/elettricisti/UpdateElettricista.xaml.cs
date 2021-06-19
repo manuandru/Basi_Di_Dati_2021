@@ -49,7 +49,7 @@ namespace GestionaleTecnoimpianti.windows.elettricisti
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Violazione DATABASE: " + ex);
+                    MessageBox.Show("Violazione DATABASE: " + ex.Message);
                 }
             }
             else

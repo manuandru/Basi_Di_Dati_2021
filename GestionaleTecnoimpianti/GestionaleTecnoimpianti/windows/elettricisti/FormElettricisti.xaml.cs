@@ -46,9 +46,16 @@ namespace GestionaleTecnoimpianti.windows.elettricisti
 
                     db.ELETTRICISTI.InsertOnSubmit(newElettricista);
 
-                    db.SubmitChanges();
-                    MessageBox.Show("Nuovo Elettricista inserito correttamente");
-                    Close();
+                    try
+                    {
+                        db.SubmitChanges();
+                        MessageBox.Show("Nuovo Elettricista inserito correttamente");
+                        Close();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Violazione Database: " + ex.Message);
+                    }
                 }
             }
             else
