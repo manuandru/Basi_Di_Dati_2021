@@ -4,6 +4,7 @@ using GestionaleTecnoimpianti.windows.elettricisti;
 using GestionaleTecnoimpianti.windows.fornitori;
 using GestionaleTecnoimpianti.windows.furgoni;
 using GestionaleTecnoimpianti.windows.impiantiElettrici;
+using GestionaleTecnoimpianti.windows.lavori;
 using GestionaleTecnoimpianti.windows.materiali;
 using GestionaleTecnoimpianti.windows.preventivi;
 using System;
@@ -503,12 +504,62 @@ namespace GestionaleTecnoimpianti
 
         private void Nuovo_Lavoro_Click(object sender, RoutedEventArgs e)
         {
-
+            new FormLavori().ShowDialog();
         }
 
         private void Elenco_Lavori_Click(object sender, RoutedEventArgs e)
         {
+            var Lavori = from l in DB.LAVORI
+                         orderby l.Data descending
+                         select new { l.CodImpianto, l.Data, l.Costo, Tipologia = l.TIPOLOGIE.Nome };
 
+            LavoriDataGrid.ItemsSource = Lavori;
+        }
+
+        /// <summary>
+        /// Launch the information FORM for (Lavori)
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Lavori_DataGrid_Double_Click(object sender, MouseButtonEventArgs e)
+        {
+            if (LavoriDataGrid.SelectedItem != null)
+            {
+                dynamic selectedLavoro = LavoriDataGrid.SelectedItem;
+                int SelectedCodImpianto = selectedLavoro.CodImpianto;
+                DateTime SelectedData = selectedLavoro.Data;
+
+                var data = (from l in DB.LAVORI
+                            where l.CodImpianto == SelectedCodImpianto && l.Data == SelectedData
+                            select l).First();
+
+                if (data != null)
+                {
+                    new InfoLavori(data).ShowDialog();
+                }
+            }
+        }
+
+        private void Mostra_TipologiaLavori_Click(object sender, RoutedEventArgs e)
+        {
+            var Tipologie = from t in DB.TIPOLOGIE
+                             select t;
+
+            int maxTipologieCount = Tipologie.Max(t => t.NumeroLavori);
+
+            var TopTipologia = (from t in Tipologie
+                                where t.NumeroLavori == maxTipologieCount
+                                select new { t.Nome, t.NumeroLavori, t.Descrizione }).First();
+
+            MessageBox.Show("La tipologia di Lavoro più eseguita è "
+                + TopTipologia.Nome + ", con "
+                + TopTipologia.NumeroLavori + " Lavori");
+
+        }
+
+        private void Inserisci_Tipologia_Click(object sender, RoutedEventArgs e)
+        {
+            new FormTipologie().ShowDialog();
         }
     }
 }

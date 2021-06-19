@@ -1,0 +1,41 @@
+﻿<Window x:Class="GestionaleTecnoimpianti.windows.lavori.FormLavori"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GestionaleTecnoimpianti.windows.lavori"
+       Title="Inserimento Nuovo Lavoro" Height="500" Width="800">
+    <Grid>
+        <Label Content="Codice Impianto" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="150"/>
+        <ComboBox x:Name="CodImpianto" HorizontalAlignment="Left" Margin="165,10,0,0" VerticalAlignment="Top" Width="125" Height="26"/>
+        <Label Content="Data Lavoro" HorizontalAlignment="Left" Margin="10,49,0,0" VerticalAlignment="Top" Width="150"/>
+        <DatePicker x:Name="Data_Lavoro" HorizontalAlignment="Left" Margin="115,49,0,0" VerticalAlignment="Top" Width="175" Height="26"/>
+        <Label Content="Tipologia Lavoro" HorizontalAlignment="Left" Margin="10,90,0,0" VerticalAlignment="Top" Width="150"/>
+        <ComboBox x:Name="CodTipologia" HorizontalAlignment="Left" Margin="165,90,0,0" VerticalAlignment="Top" Width="125" Height="26"/>
+        <Separator HorizontalAlignment="Left" Height="20" Margin="0,121,0,0" VerticalAlignment="Top" Width="300"/>
+        <Separator HorizontalAlignment="Left" Height="20" Margin="64,226,0,0" VerticalAlignment="Top" Width="472" RenderTransformOrigin="0.5,0.5">
+            <Separator.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Separator.RenderTransform>
+        </Separator>
+        <Label Content="Codice Materiale" HorizontalAlignment="Left" Margin="10,146,0,0" VerticalAlignment="Top" Width="150"/>
+        <ComboBox x:Name="Codice_Materiale" HorizontalAlignment="Left" Margin="165,146,0,0" VerticalAlignment="Top" Width="125" Height="26" SelectionChanged="Codice_Materiale_SelectionChanged"/>
+        <Label Content="Quantità" HorizontalAlignment="Left" Margin="10,177,0,0" VerticalAlignment="Top" Width="150"/>
+        <TextBox x:Name="Quantita_Materiale" HorizontalAlignment="Left" Margin="165,177,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="125" Height="26"/>
+        <Label Content="Prezzo" HorizontalAlignment="Left" Margin="10,208,0,0" VerticalAlignment="Top" Width="150"/>
+        <TextBox x:Name="Prezzo_Materiale" HorizontalAlignment="Left" Margin="165,208,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="125" Height="26"/>
+        <Label Content="Sconto" HorizontalAlignment="Left" Margin="10,239,0,0" VerticalAlignment="Top" Width="150"/>
+        <TextBox x:Name="Sconto_Materiale" HorizontalAlignment="Left" Margin="165,239,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="125" Height="26"/>
+        <Label Content="Nota" HorizontalAlignment="Left" Margin="10,267,0,0" VerticalAlignment="Top" Width="150"/>
+        <TextBox x:Name="Nota_Materiale" HorizontalAlignment="Left" Height="51" Margin="10,298,0,0" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" VerticalAlignment="Top" Width="280"/>
+        <Separator HorizontalAlignment="Left" Height="20" Margin="0,384,0,0" VerticalAlignment="Top" Width="300"/>
+        <Button Content="Aggiungi Materiale" HorizontalAlignment="Left" Margin="10,354,0,0" VerticalAlignment="Top" Width="280" Height="30" FontSize="16" FontWeight="Bold" Click="Aggiungi_Materiale" />
+        <Button Content="CONFERMA" HorizontalAlignment="Left" Margin="10,404,0,0" VerticalAlignment="Top" Width="280" Height="49" FontSize="20" FontWeight="Bold" Background="#FF9BFF71" Click="Conferma"/>
+        <DataGrid x:Name="ParzialeDataGrid" HorizontalAlignment="Left" Height="443" Margin="310,10,0,0" VerticalAlignment="Top" Width="464" />
+    </Grid>
+</Window>

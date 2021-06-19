@@ -120,6 +120,8 @@
                     <Separator HorizontalAlignment="Left" Height="1" Margin="0,90,-5.778,0" VerticalAlignment="Top" Width="800"/>
                     <Button Content="Elenco Lavori ordinati per Data" HorizontalAlignment="Left" Margin="10,110,0,0" VerticalAlignment="Top" Width="310" Height="60" FontWeight="Bold" FontSize="16" Click="Elenco_Lavori_Click" />
                     <DataGrid x:Name="LavoriDataGrid" HorizontalAlignment="Left" Height="377" Margin="334,110,0,0" VerticalAlignment="Top" Width="450" MouseDoubleClick="Lavori_DataGrid_Double_Click" />
+                    <Button Content="Mostra la tipologie di &#xA;Lavori più frequenti" HorizontalAlignment="Left" Margin="10,427,0,0" VerticalAlignment="Top" Width="310" Height="60" FontWeight="Bold" FontSize="16" Click="Mostra_TipologiaLavori_Click" />
+                    <Button Content="Aggiungi Tipologia" HorizontalAlignment="Left" Margin="10,362,0,0" VerticalAlignment="Top" Width="310" Height="60" FontWeight="Bold" FontSize="16" Click="Inserisci_Tipologia_Click" />
                 </Grid>
             </TabItem>
             <TabItem Header="Turni Lavorativi" Margin="205.667,0,-225.778,0">
