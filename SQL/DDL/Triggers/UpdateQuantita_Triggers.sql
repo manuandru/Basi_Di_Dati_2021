@@ -13,12 +13,12 @@ BEGIN
     SELECT @Quantita = Quantità FROM MATERIALI WHERE CodMateriale = @CodMateriale;
     SELECT @QuantitaVenduta = QuantitàVenduta FROM MATERIALI WHERE CodMateriale = @CodMateriale;
 
-    /* UPDATE QUANTITA IN MAGAZZINO */
+    /* UPDATE QUANTITA' IN MAGAZZINO */
     UPDATE MATERIALI
     SET Quantità = @Quantita - @QuantitaUsata
     WHERE CodMateriale = @CodMateriale
 
-    /* UPDATE QUANTITA VENTUDA */
+    /* UPDATE QUANTITA' VENDUTA */
     UPDATE MATERIALI
     SET QuantitàVenduta = QuantitàVenduta + @QuantitaUsata
     WHERE CodMateriale = @CodMateriale
