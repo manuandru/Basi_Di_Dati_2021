@@ -607,9 +607,82 @@ namespace GestionaleTecnoimpianti
             }
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Ore_Lavorative_Click(object sender, RoutedEventArgs e)
         {
+            if (DataInizio_OreLavorative.SelectedDate != null && DataFine_OreLavorative.SelectedDate != null
+                && DataInizio_OreLavorative.SelectedDate <= DataFine_OreLavorative.SelectedDate)
+            {
+                var TurniLavorativi = from t in DB.TURNI_LAVORATIVI
+                                      where t.DataLavoro >= DataInizio_OreLavorative.SelectedDate
+                                            && t.DataLavoro <= DataFine_OreLavorative.SelectedDate
+                                      select t;
 
+                if (CodiceElettricista_OreLavorative.SelectedIndex != -1)
+                {
+                    TurniLavorativi = TurniLavorativi.Where(t => t.CodiceFiscale == (string)CodiceElettricista_OreLavorative.SelectedItem);
+                    if (DataElettricista_OreLavorative.SelectedIndex != -1)
+                    {
+                        TurniLavorativi = TurniLavorativi.Where(t => t.DataInizioElettricista == (DateTime)DataElettricista_OreLavorative.SelectedItem);
+                    }
+                }
+
+                var GroupedTurniLavorativi = from t in TurniLavorativi
+                                             group t by new { t.CodiceFiscale, t.DataInizioElettricista} into g
+                                             select g;
+
+                List<Tuple<string, DateTime, TimeSpan>> TotaleOreElettricisti = new List<Tuple<string, DateTime, TimeSpan>>();
+                foreach (var elettricista in GroupedTurniLavorativi)
+                {
+                    TimeSpan TotalHour = TimeSpan.Zero;
+                    foreach (var t in elettricista)
+                    {
+                        TotalHour += t.OraFine - t.OraInizio;
+                    }
+                    TotaleOreElettricisti.Add(Tuple.Create(elettricista.Key.CodiceFiscale, elettricista.Key.DataInizioElettricista, TotalHour));
+                }
+
+                OreLavorativeDataGrid.ItemsSource = TotaleOreElettricisti;
+
+                OreLavorativeDataGrid.Columns[0].Header = "Codice Fiscale";
+                OreLavorativeDataGrid.Columns[1].Header = "Data Assunzione";
+                OreLavorativeDataGrid.Columns[2].Header = "Ore Lavorate";
+            }
+            else
+            {
+                MessageBox.Show("Inserisci un periodo corretto");
+            }
+        }
+
+        private void CodiceElettricista_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            DataElettricista_OreLavorative.SelectedIndex = -1;
+            if (CodiceElettricista_OreLavorative.SelectedIndex != -1)
+            {
+                var DateInizioElettricista = from er in DB.ELETTRICISTI_CON_RUOLI
+                                             where er.CodiceFiscale == ((string)CodiceElettricista_OreLavorative.SelectedItem)
+                                             select er.DataInizio;
+
+                DataElettricista_OreLavorative.ItemsSource = DateInizioElettricista;
+            }
+        }
+
+
+        /// <summary>
+        /// When the (Ore Lavorative) TAB is selected, the combobox is filled
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Elenco_Codici_Fiscali_Click(object sender, MouseButtonEventArgs e)
+        {
+            var CodiciFiscali = from el in DB.ELETTRICISTI
+                                select el.CodiceFiscale;
+
+            CodiceElettricista_OreLavorative.ItemsSource = CodiciFiscali;
+        }
+
+        private void Cancella_OreLavorative_Click(object sender, RoutedEventArgs e)
+        {
+            CodiceElettricista_OreLavorative.SelectedIndex = -1;
         }
     }
 }
