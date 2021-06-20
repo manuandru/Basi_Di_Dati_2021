@@ -26,6 +26,8 @@ Per installare correttamente il Dababase bisogna seguire i passi illustrati succ
     - ContaElettricistaDataFineNull_Function.sql
     - DataFineImpiantoDaCodice_Function.sql
     - DataInizioImpiantoDaCodice_Function.sql
+  - [Triggers](SQL/DDL/Triggers):
+    - UpdateQuantita_Triggers.sql
   - Tecnoimpianti_Create_DDL.sql
  
  ### Avvio Applicazione
