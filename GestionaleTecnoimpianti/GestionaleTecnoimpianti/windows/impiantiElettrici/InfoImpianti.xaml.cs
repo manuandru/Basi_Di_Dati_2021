@@ -45,7 +45,8 @@ namespace GestionaleTecnoimpianti.windows.impiantiElettrici
                 Aggiungi_DataFine_Button.IsEnabled = false;
             }
 
-            var Lavori = from l in impianto.LAVORI
+            var Lavori = from l in db.LAVORI
+                         where l.CodImpianto == impianto.CodImpianto
                          select new
                          {
                              l.Data,

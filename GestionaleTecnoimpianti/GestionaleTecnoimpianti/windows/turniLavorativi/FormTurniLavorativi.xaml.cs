@@ -73,6 +73,7 @@ namespace GestionaleTecnoimpianti.windows.turniLavorativi
                 catch (Exception ex)
                 {
                     MessageBox.Show("Violazione Database: " + ex.Message);
+                    Close();
                 }
             }
             else
