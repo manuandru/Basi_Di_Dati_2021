@@ -95,9 +95,17 @@ namespace GestionaleTecnoimpianti.windows.elettricisti
 
                 DB.RUOLI.InsertOnSubmit(NewRuolo);
 
-                DB.SubmitChanges();
-                SetUpRuoli();
-                MessageBox.Show("Nuovo Ruolo aggiunto");
+                try
+                {
+                    DB.SubmitChanges();
+                    SetUpRuoli();
+                    MessageBox.Show("Nuovo Ruolo aggiunto");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Violazione Database: " + ex.Message);
+                }
+
             }
         }
     }

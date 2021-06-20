@@ -125,6 +125,7 @@ namespace GestionaleTecnoimpianti.windows.lavori
                 catch (Exception ex)
                 {
                     MessageBox.Show("VIOLAZIONE DATABASE: " + ex.Message);
+                    Close();
                 }
 
             }

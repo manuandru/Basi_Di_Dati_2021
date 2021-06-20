@@ -2,7 +2,7 @@
   <Connection Mode="AppSettings" ConnectionString="Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\TecnoimpiantiDB.mdf;Integrated Security=True" SettingsObjectName="GestionaleTecnoimpianti.Properties.Settings" SettingsPropertyName="TecnoimpiantiDBConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.CLIENTI" Member="CLIENTI">
     <Type Name="CLIENTI">
-      <Column Name="CodCliente" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CodCliente" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="Telefono" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
       <Column Name="CodiceFiscale" Type="System.String" DbType="NChar(16)" CanBeNull="true" />
       <Column Name="Nome" Type="System.String" DbType="VarChar(32)" CanBeNull="true" />
@@ -63,7 +63,7 @@
   </Table>
   <Table Name="dbo.FORNITORI" Member="FORNITORI">
     <Type Name="FORNITORI">
-      <Column Name="CodFornitore" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CodFornitore" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="Nome" Type="System.String" DbType="VarChar(32) NOT NULL" CanBeNull="false" />
       <Column Name="Telefono" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
       <Association Name="FORNITORI_MATERIALI" Member="MATERIALI" ThisKey="CodFornitore" OtherKey="CodFornitore" Type="MATERIALI" />
@@ -80,7 +80,7 @@
   </Table>
   <Table Name="dbo.IMPIANTI_ELETTRICI" Member="IMPIANTI_ELETTRICI">
     <Type Name="IMPIANTI_ELETTRICI">
-      <Column Name="CodImpianto" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CodImpianto" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="DataInizio" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
       <Column Name="DataFine" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="Regione" Type="System.String" DbType="VarChar(32) NOT NULL" CanBeNull="false" />
@@ -107,7 +107,7 @@
   </Table>
   <Table Name="dbo.MATERIALI" Member="MATERIALI">
     <Type Name="MATERIALI">
-      <Column Name="CodMateriale" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CodMateriale" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="Nome" Type="System.String" DbType="VarChar(32) NOT NULL" CanBeNull="false" />
       <Column Name="Quantità" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="Prezzo" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
@@ -131,7 +131,7 @@
   </Table>
   <Table Name="dbo.PREVENTIVI" Member="PREVENTIVI">
     <Type Name="PREVENTIVI">
-      <Column Name="CodPreventivo" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CodPreventivo" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="Data" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
       <Column Name="CodCliente" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="CodiceFiscale" Type="System.String" DbType="NChar(16) NOT NULL" CanBeNull="false" />
@@ -143,14 +143,14 @@
   </Table>
   <Table Name="dbo.RUOLI" Member="RUOLI">
     <Type Name="RUOLI">
-      <Column Name="CodRuolo" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CodRuolo" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="Descrizione" Type="System.String" DbType="VarChar(256) NOT NULL" CanBeNull="false" />
       <Association Name="RUOLI_ELETTRICISTI_CON_RUOLI" Member="ELETTRICISTI_CON_RUOLI" ThisKey="CodRuolo" OtherKey="CodRuolo" Type="ELETTRICISTI_CON_RUOLI" />
     </Type>
   </Table>
   <Table Name="dbo.TIPOLOGIE" Member="TIPOLOGIE">
     <Type Name="TIPOLOGIE">
-      <Column Name="CodTipologia" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CodTipologia" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="Nome" Type="System.String" DbType="VarChar(32) NOT NULL" CanBeNull="false" />
       <Column Name="Descrizione" Type="System.String" DbType="VarChar(256) NOT NULL" CanBeNull="false" />
       <Column Name="NumeroLavori" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />

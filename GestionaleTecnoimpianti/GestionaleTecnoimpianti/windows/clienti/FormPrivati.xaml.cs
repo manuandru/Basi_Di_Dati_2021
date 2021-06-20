@@ -42,14 +42,8 @@ namespace GestionaleTecnoimpianti.windows
                     return;
                 }
 
-                var data2 = from c in db.CLIENTI
-                           select c.CodCliente;
-                int codNewCliente = data2.Max() + 1;
-
-                
                 CLIENTI newCliente = new CLIENTI()
                 {
-                    CodCliente = codNewCliente,
                     Nome = Nome.Text,
                     Cognome = Cognome.Text,
                     CodiceFiscale = CF.Text,
