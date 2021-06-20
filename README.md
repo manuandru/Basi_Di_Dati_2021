@@ -4,11 +4,11 @@
 Per la realizzazione di questo progetto sono state utilizzate le seguenti tecnologie:
 
 - .NET Framework 4.7.2
-- SQL Server
+- SQL Server 2019
 - Linq to SQL
 
 ## Procedura di installazione
-Per installare correttamente il Dababase bisogna seguire i passi illustrati successivamente. Per il corretto funzionamente, è necessario seguire meticolosamente la procedura, altrimenti potrebbero verificarsi malfunzionamenti. Se non si vuole ricreare il Database, è possibile utilizzare l'applicazione già pronta nella sezione Release.
+Per installare correttamente il Dababase bisogna seguire i passi illustrati successivamente. Per il corretto funzionamente, è necessario seguire meticolosamente la procedura, altrimenti potrebbero verificarsi malfunzionamenti. Se non si vuole ricreare il Database, è possibile utilizzare l'applicazione già pronta nella sezione Release (in questo caso è necessario avere installato SQL Server sulla macchina).
 
 ### Download (via GIT)
 - Clonare il codice presente nella repository
