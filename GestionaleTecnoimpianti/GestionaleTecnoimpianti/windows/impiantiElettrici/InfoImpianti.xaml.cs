@@ -56,7 +56,14 @@ namespace GestionaleTecnoimpianti.windows.impiantiElettrici
 
             LavoriImpiantoDataGrid.ItemsSource = Lavori;
 
-            CostoTotale.Content = Lavori.Sum(l => l.Costo);
+            if (Lavori.Count() > 0)
+            {
+                CostoTotale.Content = Lavori.Sum(l => l.Costo) + " €";
+            }
+            else
+            {
+                CostoTotale.Content = "0" + " €";
+            }
         }
 
         private void Aggiungi_DataFine_Click(object sender, RoutedEventArgs e)

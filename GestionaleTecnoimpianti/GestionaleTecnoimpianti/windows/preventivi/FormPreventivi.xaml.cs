@@ -96,7 +96,6 @@ namespace GestionaleTecnoimpianti.windows.preventivi
 
                 db.MATERIALI_IN_PREVENTIVI.InsertAllOnSubmit(Parziale_Materiali);
 
-
                 try
                 {
                     db.SubmitChanges();
@@ -106,6 +105,7 @@ namespace GestionaleTecnoimpianti.windows.preventivi
                 catch (Exception ex)
                 {
                     MessageBox.Show("VIOLAZIONE DATABASE: " + ex.Message);
+                    Close();
                 }
 
             }

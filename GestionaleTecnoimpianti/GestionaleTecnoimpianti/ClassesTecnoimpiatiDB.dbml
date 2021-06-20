@@ -131,7 +131,7 @@
   </Table>
   <Table Name="dbo.PREVENTIVI" Member="PREVENTIVI">
     <Type Name="PREVENTIVI">
-      <Column Name="CodPreventivo" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CodPreventivo" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="Data" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
       <Column Name="CodCliente" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="CodiceFiscale" Type="System.String" DbType="NChar(16) NOT NULL" CanBeNull="false" />

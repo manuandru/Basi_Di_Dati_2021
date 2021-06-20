@@ -3008,7 +3008,7 @@ namespace GestionaleTecnoimpianti
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CodPreventivo", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL", IsPrimaryKey=true, IsDbGenerated=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CodPreventivo", DbType="Int NOT NULL", IsPrimaryKey=true)]
 		public int CodPreventivo
 		{
 			get

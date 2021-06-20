@@ -122,11 +122,11 @@ CREATE TABLE TURNI_LAVORATIVI
 
 CREATE TABLE PREVENTIVI
 (
-	CodPreventivo			INT			IDENTITY(1,1)	NOT NULL PRIMARY KEY,
-	Data					DATE						NOT NULL,
-	CodCliente				INT							NOT NULL,
-	CodiceFiscale			CHAR(16)					NOT NULL,
-	DataInizioElettricista	DATE						NOT NULL,
+	CodPreventivo			INT				NOT NULL PRIMARY KEY,
+	Data					DATE			NOT NULL,
+	CodCliente				INT				NOT NULL,
+	CodiceFiscale			CHAR(16)		NOT NULL,
+	DataInizioElettricista	DATE			NOT NULL,
 	CONSTRAINT FK_PREVENTIVO_CLIENTE FOREIGN KEY (CodCliente) REFERENCES CLIENTI(CodCliente),
 	CONSTRAINT FK_PREVENTIVO_ELETTRICISTA FOREIGN KEY (DataInizioElettricista, CodiceFiscale) REFERENCES ELETTRICISTI_CON_RUOLI(DataInizio, CodiceFiscale),
 	CONSTRAINT CHECK_DATE CHECK (DataInizioElettricista <= Data),

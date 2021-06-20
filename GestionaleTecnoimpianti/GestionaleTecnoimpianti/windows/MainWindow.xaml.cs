@@ -546,15 +546,23 @@ namespace GestionaleTecnoimpianti
             var Tipologie = from t in DB.TIPOLOGIE
                              select t;
 
-            int maxTipologieCount = Tipologie.Max(t => t.NumeroLavori);
+            
+            if (Tipologie.Count() > 0)
+            {
+                int maxTipologieCount = Tipologie.Max(t => t.NumeroLavori);
 
-            var TopTipologia = (from t in Tipologie
-                                where t.NumeroLavori == maxTipologieCount
-                                select new { t.Nome, t.NumeroLavori, t.Descrizione }).First();
+                var TopTipologia = (from t in Tipologie
+                                    where t.NumeroLavori == maxTipologieCount
+                                    select new { t.Nome, t.NumeroLavori, t.Descrizione }).First();
 
-            MessageBox.Show("La tipologia di Lavoro più eseguita è "
-                + TopTipologia.Nome + ", con "
-                + TopTipologia.NumeroLavori + " Lavori");
+                MessageBox.Show("La tipologia di Lavoro più eseguita è "
+                    + TopTipologia.Nome + ", con "
+                    + TopTipologia.NumeroLavori + " Lavori");
+            }
+            else
+            {
+                MessageBox.Show("Nessuna tipologia presente");
+            }
 
         }
 

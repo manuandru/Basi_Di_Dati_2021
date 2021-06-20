@@ -61,7 +61,7 @@ namespace GestionaleTecnoimpianti.windows.lavori
                     CodMateriale = ((Tuple<int, string>)Codice_Materiale.SelectedItem).Item1,
                     Quantità = int.Parse(Quantita_Materiale.Text),
                     Prezzo = decimal.Parse(Prezzo_Materiale.Text),
-                    Sconto = float.Parse(Sconto_Materiale.Text),
+                    Sconto = float.Parse(Sconto_Materiale.Text == "" ? "0" : Sconto_Materiale.Text),
                     Nota = Nota_Materiale.Text != "" ? Nota_Materiale.Text : null
                 };
 

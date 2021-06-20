@@ -128,7 +128,7 @@
         <classShapeMoniker Id="05a5ac64-28d3-4508-867b-a5ad6b36ba91" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 8.03929768880208); (6.25 : 8.03929768880208)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(5.5 : 8.03929768880208); (5.79166666666667 : 8.03929768880208 : JumpStart); (5.95833333333333 : 8.03929768880208 : JumpEnd); (6.25 : 8.03929768880208)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/ClassesTecnoimpiatiDBDataContext/IMPIANTI_ELETTRICI/IMPIANTI_ELETTRICI_LAVORI" />
       <nodes>
         <classShapeMoniker Id="955b145d-b96b-49fe-8c5a-6b65a0f5de44" />
@@ -149,21 +149,21 @@
         <classShapeMoniker Id="d2e2ea72-ceae-4f51-a34f-55fa102d723f" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 15.5); (5.875 : 15.125); (5.875 : 4.53929768880208); (5.97916666666667 : 4.53929768880208 : JumpStart); (6.14583333333333 : 4.53929768880208 : JumpEnd); (6.25 : 4.53929768880208)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(5.5 : 15.5); (5.875 : 15.125); (5.875 : 4.53929768880208); (6.25 : 4.53929768880208)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/ClassesTecnoimpiatiDBDataContext/MATERIALI/MATERIALI_MATERIALI_IN_PREVENTIVI" />
       <nodes>
         <classShapeMoniker Id="d2e2ea72-ceae-4f51-a34f-55fa102d723f" />
         <classShapeMoniker Id="55772ef3-7203-4950-907c-151d70431ddc" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 4.08214884440104); (5.97916666666667 : 4.08214884440104 : JumpStart); (6.14583333333333 : 4.08214884440104 : JumpEnd); (6.25 : 4.08214884440104)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(5.5 : 4.08214884440104); (6.25 : 4.08214884440104)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/ClassesTecnoimpiatiDBDataContext/PREVENTIVI/PREVENTIVI_MATERIALI_IN_PREVENTIVI" />
       <nodes>
         <classShapeMoniker Id="6668130f-f0e1-49c1-b397-4dba10e46f56" />
         <classShapeMoniker Id="55772ef3-7203-4950-907c-151d70431ddc" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 4.94794840494792); (3.5 : 4.94794840494792)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(2.75 : 4.94794840494792); (3.19791666666667 : 4.94794840494792 : JumpStart); (3.36458333333333 : 4.94794840494792 : JumpEnd); (3.5 : 4.94794840494792)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/ClassesTecnoimpiatiDBDataContext/CLIENTI/CLIENTI_PREVENTIVI" />
       <nodes>
         <classShapeMoniker Id="26c9ec21-22ca-4240-89f7-4e164b3421f6" />
